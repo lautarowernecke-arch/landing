@@ -8,7 +8,7 @@ Sitio web y landing page oficial del ecosistema de software empresarial **TRAXIO
 - **Partrax**: Gestión integral de playas de estacionamiento, cocheras y garajes con mapa interactivo en tiempo real y control por patente.
 - **CaseQR**: Control de acceso y asistencia de personal mediante códigos QR en modo Kiosco PWA, portal del empleado y bitácora de guardia/seguridad.
 - **TARS CRM**: Software CRM y gestión de laboratorio técnico para tiendas de telefonía móvil y servicio técnico con trazabilidad por IMEI.
-- **Lander TPV**: Sistema POS en la nube multi-tenant para minimarkets, autoservicios y almacenes.
+- **Lander Barbería & POS**: Software especializado para barberías y salones (agenda de turnos con confirmación WhatsApp, atención rápida sin turno, liquidación automática de comisiones para barberos, boxes/sillones e insumos) y sistema POS multi-tenant con Kardex para minimarkets y retail.
 - **Traxionar Gym**: Plataforma SaaS para administración de socios, planes de membresía, rutinas de entrenamiento y clases fitness.
 
 ## 🛠️ Tecnologías
