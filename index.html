@@ -389,21 +389,21 @@
 <body>
 
     <!-- Header Navigation (Single Row with Dropdown for TPV Modules) -->
-    <header id="navbar" role="banner" aria-label="Encabezado principal de Traxionar" class="fixed top-0 w-full z-50 transition-all duration-500 py-3.5 px-6 md:px-10 flex items-center justify-between text-white">
+    <header id="navbar" role="banner" aria-label="Encabezado principal de Traxionar" class="fixed top-0 w-full z-50 transition-all duration-300 py-2 px-3 sm:px-4 lg:px-6 flex items-center justify-between text-white">
         <div class="flex items-center gap-2 shrink-0">
-            <a href="#inicio" aria-label="Ir al inicio de Traxionar" class="text-xl md:text-2xl font-bold tracking-widest uppercase bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">Traxionar</a>
+            <a href="#inicio" aria-label="Ir al inicio de Traxionar" class="text-lg xl:text-xl font-bold tracking-wider uppercase bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">Traxionar</a>
         </div>
         
         <!-- Desktop Nav: Single Row with Dropdown + Ecosystem Systems -->
-        <nav aria-label="Navegación principal y ecosistema de sistemas" class="hidden lg:flex items-center gap-1.5 xl:gap-3 text-xs xl:text-sm font-medium tracking-wide whitespace-nowrap">
-            <a href="#inicio" class="px-2.5 py-1.5 rounded-full hover:bg-white/10 hover:text-indigo-400 transition-colors">Inicio</a>
+        <nav aria-label="Navegación principal y ecosistema de sistemas" class="hidden lg:flex items-center gap-1 xl:gap-2 text-[11px] xl:text-xs font-medium tracking-normal whitespace-nowrap">
+            <a href="#inicio" class="px-2 py-1 rounded-full hover:bg-white/10 hover:text-indigo-400 transition-colors">Inicio</a>
 
             <!-- Menú Desplegable: Módulos TPV -->
             <div class="relative group" id="tpv-dropdown-container">
-                <button id="tpv-dropdown-btn" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Abrir menú de módulos del sistema TPV" class="px-3 py-1.5 rounded-full bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/40 text-gray-200 hover:text-indigo-300 transition-all flex items-center gap-1.5 cursor-pointer">
-                    <i class="fas fa-th-large text-indigo-400 text-xs" aria-hidden="true"></i>
+                <button id="tpv-dropdown-btn" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Abrir menú de módulos del sistema TPV" class="px-2.5 py-1 rounded-full bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/40 text-gray-200 hover:text-indigo-300 transition-all flex items-center gap-1 cursor-pointer">
+                    <i class="fas fa-th-large text-indigo-400 text-[10px]" aria-hidden="true"></i>
                     <span>Módulos TPV</span>
-                    <i id="tpv-dropdown-chevron" class="fas fa-chevron-down text-[10px] text-gray-400 transition-transform duration-300 group-hover:rotate-180" aria-hidden="true"></i>
+                    <i id="tpv-dropdown-chevron" class="fas fa-chevron-down text-[9px] text-gray-400 transition-transform duration-300 group-hover:rotate-180" aria-hidden="true"></i>
                 </button>
 
                 <!-- Dropdown Panel -->
@@ -475,44 +475,47 @@
                 </div>
             </div>
 
-            <span class="text-white/20" aria-hidden="true">|</span>
+            <span class="text-white/20 text-xs" aria-hidden="true">|</span>
 
             <!-- Sistemas del Ecosistema -->
-            <a href="#ecosistema" class="px-2.5 py-1.5 rounded-full hover:bg-indigo-500/20 text-indigo-300 hover:text-indigo-200 font-semibold transition-all flex items-center gap-1.5">
-                <i class="fas fa-layer-group text-[11px]" aria-hidden="true"></i> Ecosistema
+            <a href="#ecosistema" title="Ecosistema de Sistemas Traxionar" class="px-2 py-1 rounded-full hover:bg-indigo-500/20 text-indigo-300 hover:text-indigo-200 font-semibold transition-all flex items-center gap-1">
+                <i class="fas fa-layer-group text-[10px]" aria-hidden="true"></i>
+                <span>Ecosistema</span>
             </a>
-            <a href="#partrax" class="px-2.5 py-1.5 rounded-full hover:bg-amber-500/20 text-gray-200 hover:text-amber-400 transition-all flex items-center gap-1.5">
-                <i class="fas fa-car text-amber-400 text-[11px]" aria-hidden="true"></i> Partrax
+            <a href="#partrax" title="Partrax - Estacionamientos y Garajes" class="px-2 py-1 rounded-full hover:bg-amber-500/20 text-gray-200 hover:text-amber-400 transition-all flex items-center gap-1">
+                <i class="fas fa-car text-amber-400 text-[10px]" aria-hidden="true"></i>
+                <span>Partrax</span>
             </a>
-            <a href="#caseqr" class="px-2.5 py-1.5 rounded-full hover:bg-cyan-500/20 text-gray-200 hover:text-cyan-400 transition-all flex items-center gap-1.5">
-                <i class="fas fa-qrcode text-cyan-400 text-[11px]" aria-hidden="true"></i> CaseQR
+            <a href="#caseqr" title="CaseQR - Control de Acceso y Asistencia QR" class="px-2 py-1 rounded-full hover:bg-cyan-500/20 text-gray-200 hover:text-cyan-400 transition-all flex items-center gap-1">
+                <i class="fas fa-qrcode text-cyan-400 text-[10px]" aria-hidden="true"></i>
+                <span>CaseQR</span>
             </a>
-            <a href="#tars-crm" class="px-2.5 py-1.5 rounded-full hover:bg-violet-500/20 text-gray-200 hover:text-violet-400 transition-all flex items-center gap-1.5">
-                <i class="fas fa-mobile-alt text-violet-400 text-[11px]" aria-hidden="true"></i> TARS CRM
+            <a href="#tars-crm" title="TARS CRM - Tiendas de Celulares y Servicio Técnico" class="px-2 py-1 rounded-full hover:bg-violet-500/20 text-gray-200 hover:text-violet-400 transition-all flex items-center gap-1">
+                <i class="fas fa-mobile-alt text-violet-400 text-[10px]" aria-hidden="true"></i>
+                <span>TARS</span>
             </a>
-            <a href="#lander-tpv" class="px-2.5 py-1.5 rounded-full hover:bg-amber-500/20 text-gray-200 hover:text-amber-400 transition-all flex items-center gap-1.5">
-                <i class="fas fa-scissors text-amber-400 text-[11px]" aria-hidden="true"></i> Lander Barbería & POS
+            <a href="#lander-tpv" title="Lander Barbería & POS Minimarkets" class="px-2 py-1 rounded-full hover:bg-amber-500/20 text-gray-200 hover:text-amber-400 transition-all flex items-center gap-1">
+                <i class="fas fa-scissors text-amber-400 text-[10px]" aria-hidden="true"></i>
+                <span>Lander</span>
             </a>
-            <a href="#gym-traxionar" class="px-2.5 py-1.5 rounded-full hover:bg-rose-500/20 text-gray-200 hover:text-rose-400 transition-all flex items-center gap-1.5">
-                <i class="fas fa-dumbbell text-rose-400 text-[11px]" aria-hidden="true"></i> Gym Traxionar
+            <a href="#gym-traxionar" title="Gym Traxionar - Software para Gimnasios" class="px-2 py-1 rounded-full hover:bg-rose-500/20 text-gray-200 hover:text-rose-400 transition-all flex items-center gap-1">
+                <i class="fas fa-dumbbell text-rose-400 text-[10px]" aria-hidden="true"></i>
+                <span>Gym</span>
             </a>
 
-            <span class="text-white/20" aria-hidden="true">|</span>
+            <span class="text-white/20 text-xs" aria-hidden="true">|</span>
 
-            <a href="#planes" class="px-2.5 py-1.5 rounded-full hover:bg-white/10 hover:text-indigo-400 transition-colors">Planes</a>
+            <a href="#planes" class="px-2 py-1 rounded-full hover:bg-white/10 hover:text-indigo-400 transition-colors">Planes</a>
         </nav>
 
         <!-- Right side actions -->
-        <div class="flex items-center gap-3 shrink-0">
-            <a href="https://traxionar.com.ar/tpvs" aria-label="Iniciar sesión en el sistema Traxionar TPV" class="hidden md:flex items-center gap-2 bg-white text-black px-5 py-2 rounded-full text-xs xl:text-sm font-semibold whitespace-nowrap hover:bg-gray-200 hover:scale-105 transition-all shadow-[0_0_15px_rgba(255,255,255,0.3)]">
-                <i class="fas fa-user-circle" aria-hidden="true"></i> Iniciar Sesión
+        <div class="flex items-center gap-2 shrink-0">
+            <a href="https://traxionar.com.ar/tpvs" aria-label="Iniciar sesión en el sistema Traxionar TPV" class="flex items-center gap-1.5 bg-white text-black px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap hover:bg-gray-200 hover:scale-105 transition-all shadow-[0_0_12px_rgba(255,255,255,0.3)]">
+                <i class="fas fa-user-circle text-xs" aria-hidden="true"></i>
+                <span>Iniciar Sesión</span>
             </a>
 
-            <a href="https://traxionar.com.ar/tpvs" aria-label="Entrar al sistema Traxionar TPV" class="md:hidden flex items-center gap-1.5 bg-white/10 hover:bg-white/20 border border-white/30 px-4 py-2 rounded-full text-xs font-semibold tracking-wide whitespace-nowrap transition-colors">
-                <i class="fas fa-sign-in-alt text-indigo-400" aria-hidden="true"></i> Entrar
-            </a>
-
-            <button id="mobile-menu-btn" type="button" aria-label="Abrir menú de navegación móvil" class="lg:hidden p-2 text-xl focus:outline-none hover:text-indigo-400 transition-colors">
+            <button id="mobile-menu-btn" type="button" aria-label="Abrir menú de navegación móvil" class="lg:hidden p-1.5 text-lg focus:outline-none hover:text-indigo-400 transition-colors">
                 <i class="fas fa-bars" aria-hidden="true"></i>
             </button>
         </div>
@@ -1736,12 +1739,12 @@
         container.addEventListener('scroll', () => {
             if (container.scrollTop > 50) {
                 navbar.classList.add('nav-scrolled');
-                navbar.classList.remove('py-3.5');
-                navbar.classList.add('py-2.5');
+                navbar.classList.remove('py-2');
+                navbar.classList.add('py-1.5');
             } else {
                 navbar.classList.remove('nav-scrolled');
-                navbar.classList.add('py-3.5');
-                navbar.classList.remove('py-2.5');
+                navbar.classList.add('py-2');
+                navbar.classList.remove('py-1.5');
             }
         });
 
