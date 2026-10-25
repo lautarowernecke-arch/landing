@@ -58,6 +58,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://images.unsplash.com">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1920&q=80">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Marcado de Datos Estructurados Avanzado (Schema.org JSON-LD @graph) -->
@@ -632,6 +633,26 @@
                     <a href="#ecosistema" class="bg-indigo-600/90 text-white border border-indigo-400/40 backdrop-blur-md px-8 py-3.5 rounded-full font-medium hover:bg-indigo-500 hover:scale-105 transition duration-300 shadow-[0_0_20px_rgba(79,70,229,0.4)]">
                         <i class="fas fa-cubes mr-2"></i> Ver Todos los Sistemas
                     </a>
+                </div>
+
+                <!-- Insignias de Confianza / Prueba Social -->
+                <div class="mt-8 flex flex-wrap items-center justify-center gap-2.5 sm:gap-4 text-xs text-gray-300 reveal delay-300 max-w-4xl px-2">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm">
+                        <i class="fas fa-file-invoice text-emerald-400"></i>
+                        <span>Facturación <strong>AFIP</strong> Homologada</span>
+                    </div>
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm">
+                        <i class="fas fa-handshake text-[#009EE3]"></i>
+                        <span>Cobros <strong>Mercado Pago</strong> Point &amp; QR</span>
+                    </div>
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm">
+                        <i class="fas fa-cloud text-cyan-400"></i>
+                        <span>Cloud <strong>99.9% Uptime</strong></span>
+                    </div>
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm">
+                        <i class="fas fa-headset text-indigo-400"></i>
+                        <span>Soporte <strong>Argentina &amp; LATAM</strong></span>
+                    </div>
                 </div>
                 
                 <!-- Scroll indicator -->
@@ -1673,8 +1694,8 @@
                                     <div><strong class="text-white">TARS CRM:</strong> Tiendas de Celulares, Stock por IMEI y Órdenes de Servicio Técnico.</div>
                                 </li>
                                 <li class="flex items-start gap-2.5">
-                                    <i class="fas fa-store text-emerald-400 w-5 mt-1"></i>
-                                    <div><strong class="text-white">Lander TPV:</strong> POS SaaS para Minimarkets con Kardex, Promociones y Caja.</div>
+                                    <i class="fas fa-scissors text-amber-400 w-5 mt-1"></i>
+                                    <div><strong class="text-white">Lander Barbería &amp; POS:</strong> Turnos WhatsApp, Comisiones de Barberos, Boxes y POS Minimarkets con Kardex.</div>
                                 </li>
                                 <li class="flex items-start gap-2.5">
                                     <i class="fas fa-dumbbell text-rose-400 w-5 mt-1"></i>
@@ -1688,6 +1709,76 @@
                                 <i class="fab fa-whatsapp mr-2 text-lg"></i> Solicitar Demo o Cotización
                             </a>
                             <p class="text-[10px] text-gray-500 text-center mt-3">Implementación en la nube o en servidor propio con soporte personalizado.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cotizador Rápido por Rubro para WhatsApp -->
+                <div class="w-full max-w-5xl px-4 mb-8 reveal delay-150">
+                    <div class="glass-card p-6 md:p-8 rounded-3xl border border-white/10 bg-gradient-to-b from-[#0f0f15] to-[#07070a]">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-5 pb-4 border-b border-white/10">
+                            <div>
+                                <span class="px-2.5 py-1 rounded-full bg-indigo-500/20 text-indigo-300 text-[11px] font-bold uppercase tracking-wider">
+                                    <i class="fas fa-calculator mr-1"></i> Cotizador Express
+                                </span>
+                                <h3 class="text-xl md:text-2xl font-bold text-white mt-1">¿Qué solución necesita tu negocio?</h3>
+                            </div>
+                            <p class="text-xs text-gray-400 max-w-xs">Seleccioná tu rubro para enviar una consulta personalizada con 1 solo clic por WhatsApp.</p>
+                        </div>
+
+                        <!-- Botones de Rubros -->
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-5" id="rubros-grid">
+                            <button type="button" onclick="selectRubro('tpv', 'Traxionar TPV Multi-Sucursal con AFIP y Mercado Pago', this)" class="rubro-btn p-3 rounded-2xl border text-left transition-all duration-200 border-indigo-500 bg-indigo-500/20 text-white shadow-lg shadow-indigo-500/20">
+                                <i class="fas fa-cash-register text-indigo-400 text-lg mb-1.5 block"></i>
+                                <div class="font-bold text-xs">Comercio / TPV</div>
+                                <div class="text-[10px] text-gray-400">AFIP, Caja y Lotes</div>
+                            </button>
+                            <button type="button" onclick="selectRubro('barberia', 'Lander Barbería & Salones (Turnero, Comisiones y WhatsApp)', this)" class="rubro-btn p-3 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 text-gray-300 transition-all duration-200">
+                                <i class="fas fa-scissors text-amber-400 text-lg mb-1.5 block"></i>
+                                <div class="font-bold text-xs text-white">Barbería / Salón</div>
+                                <div class="text-[10px] text-gray-400">Turnos & Comisiones</div>
+                            </button>
+                            <button type="button" onclick="selectRubro('parqueo', 'Partrax (Gestión de Estacionamientos y Cocheras)', this)" class="rubro-btn p-3 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 text-gray-300 transition-all duration-200">
+                                <i class="fas fa-car text-amber-400 text-lg mb-1.5 block"></i>
+                                <div class="font-bold text-xs text-white">Estacionamiento</div>
+                                <div class="text-[10px] text-gray-400">Patentes y Mapa</div>
+                            </button>
+                            <button type="button" onclick="selectRubro('celulares', 'TARS CRM (Tiendas de Celulares y Servicio Técnico por IMEI)', this)" class="rubro-btn p-3 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 text-gray-300 transition-all duration-200">
+                                <i class="fas fa-mobile-alt text-violet-400 text-lg mb-1.5 block"></i>
+                                <div class="font-bold text-xs text-white">Celulares & Taller</div>
+                                <div class="text-[10px] text-gray-400">IMEI y Garantías</div>
+                            </button>
+                            <button type="button" onclick="selectRubro('minimarket', 'Lander TPV POS para Minimarkets y Autoservicios con Kardex', this)" class="rubro-btn p-3 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 text-gray-300 transition-all duration-200">
+                                <i class="fas fa-store text-emerald-400 text-lg mb-1.5 block"></i>
+                                <div class="font-bold text-xs text-white">Minimarkets</div>
+                                <div class="text-[10px] text-gray-400">POS veloz & Kardex</div>
+                            </button>
+                            <button type="button" onclick="selectRubro('gym', 'Traxionar Gym (Software Integral para Gimnasios y Socios)', this)" class="rubro-btn p-3 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 text-gray-300 transition-all duration-200">
+                                <i class="fas fa-dumbbell text-rose-400 text-lg mb-1.5 block"></i>
+                                <div class="font-bold text-xs text-white">Gimnasio</div>
+                                <div class="text-[10px] text-gray-400">Socios y Rutinas</div>
+                            </button>
+                            <button type="button" onclick="selectRubro('accesos', 'CaseQR (Control de Asistencia QR y Seguridad)', this)" class="rubro-btn p-3 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 text-gray-300 transition-all duration-200">
+                                <i class="fas fa-qrcode text-cyan-400 text-lg mb-1.5 block"></i>
+                                <div class="font-bold text-xs text-white">Accesos & RRHH</div>
+                                <div class="text-[10px] text-gray-400">Fichadas QR & Guardia</div>
+                            </button>
+                            <button type="button" onclick="selectRubro('radio', 'Streaming de Radio Online y Web Hosting', this)" class="rubro-btn p-3 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 text-gray-300 transition-all duration-200">
+                                <i class="fas fa-broadcast-tower text-indigo-400 text-lg mb-1.5 block"></i>
+                                <div class="font-bold text-xs text-white">Radio & Web</div>
+                                <div class="text-[10px] text-gray-400">Auto DJ & Hosting</div>
+                            </button>
+                        </div>
+
+                        <!-- Barra de confirmación y botón WhatsApp dinámico -->
+                        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 rounded-2xl bg-white/5 border border-white/10">
+                            <div class="text-left w-full sm:w-auto">
+                                <span class="text-[10px] uppercase font-bold text-gray-400 block tracking-wider">Sistema seleccionado:</span>
+                                <span id="rubro-nombre-seleccionado" class="text-xs sm:text-sm font-semibold text-emerald-400">Traxionar TPV Multi-Sucursal con AFIP y Mercado Pago</span>
+                            </div>
+                            <a id="rubro-whatsapp-btn" href="https://wa.me/543436512434?text=Hola,%20quisiera%20asesoramiento%20y%20cotizaci%C3%B3n%20para%20Traxionar%20TPV%20Multi-Sucursal%20con%20AFIP%20y%20Mercado%20Pago." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white px-6 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition duration-300 shadow-[0_0_15px_rgba(37,211,102,0.4)] hover:scale-105 shrink-0">
+                                <i class="fab fa-whatsapp text-lg"></i> Consultar por WhatsApp
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -1724,8 +1815,8 @@
                                 <p class="text-gray-400">Controla órdenes de reparación por etapas y prioridades, emite comprobantes y garantías en PDF y administra el stock de equipos por IMEI, capacidad y condición (Nuevo, Reacondicionado o Usado).</p>
                             </div>
                             <div class="bg-white/5 p-3.5 rounded-xl border border-white/5">
-                                <h4 class="font-semibold text-white mb-1">¿Qué ofrecen Lander TPV y Traxionar Gym?</h4>
-                                <p class="text-gray-400"><strong>Lander TPV</strong> brinda cobro veloz, Kardex valorizado, devoluciones, promociones y cuentas corrientes para minimarkets. <strong>Traxionar Gym</strong> gestiona socios, membresías, rutinas, antropometría, clases grupales y portal del alumno.</p>
+                                <h4 class="font-semibold text-white mb-1">¿Qué ofrecen Lander y Traxionar Gym?</h4>
+                                <p class="text-gray-400"><strong>Lander</strong> brinda gestión integral para barberías y salones (agenda de turnos con confirmación por WhatsApp, comisiones de barberos y boxes) más un sistema POS con Kardex para minimarkets. Por su parte, <strong>Traxionar Gym</strong> gestiona socios, membresías, rutinas y portal del alumno.</p>
                             </div>
                         </div>
                     </details>
@@ -1740,6 +1831,16 @@
 
     </main>
 
+    <!-- Dock de Navegación Lateral Flotante (Scroll Dots) -->
+    <nav id="scroll-dots-dock" aria-label="Navegación de secciones" class="fixed right-4 top-1/2 -translate-y-1/2 z-40 hidden xl:flex flex-col gap-1.5 p-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/10 shadow-2xl max-h-[85vh] overflow-y-auto scrollbar-none">
+        <!-- Dots generados dinámicamente -->
+    </nav>
+
+    <!-- Botón flotante Volver Arriba -->
+    <button id="back-to-top-btn" type="button" onclick="scrollToTop()" aria-label="Volver al inicio" title="Volver al inicio" class="fixed bottom-24 right-6 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white w-12 h-12 rounded-full flex items-center justify-center text-sm shadow-lg transition-all duration-300 opacity-0 pointer-events-none hover:scale-110 z-50">
+        <i class="fas fa-chevron-up" aria-hidden="true"></i>
+    </button>
+
     <!-- Botón flotante de WhatsApp -->
     <a href="https://wa.me/543436512434" target="_blank" rel="noopener noreferrer" aria-label="Contactar a Traxionar por WhatsApp" title="Consultar por WhatsApp" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-[0_0_15px_rgba(34,197,94,0.5)] hover:bg-green-400 transition-transform duration-300 z-50 hover:scale-110">
         <i class="fab fa-whatsapp" aria-hidden="true"></i>
@@ -1749,6 +1850,7 @@
         // Navbar background behavior on scroll
         const container = document.querySelector('.snap-container');
         const navbar = document.getElementById('navbar');
+        const backToTopBtn = document.getElementById('back-to-top-btn');
 
         container.addEventListener('scroll', () => {
             if (container.scrollTop > 50) {
@@ -1760,7 +1862,123 @@
                 navbar.classList.add('py-2');
                 navbar.classList.remove('py-1.5');
             }
+
+            // Mostrar/ocultar botón Volver Arriba
+            if (backToTopBtn) {
+                if (container.scrollTop > 350) {
+                    backToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+                    backToTopBtn.classList.add('opacity-100', 'pointer-events-auto');
+                } else {
+                    backToTopBtn.classList.add('opacity-0', 'pointer-events-none');
+                    backToTopBtn.classList.remove('opacity-100', 'pointer-events-auto');
+                }
+            }
+
+            // Actualizar indicador activo en scroll dots
+            updateActiveScrollDot();
         });
+
+        // Función para volver al inicio
+        function scrollToTop() {
+            container.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Cotizador Express por Rubro para WhatsApp
+        function selectRubro(key, nombre, btn) {
+            document.querySelectorAll('.rubro-btn').forEach(b => {
+                b.className = 'rubro-btn p-3 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 text-gray-300 transition-all duration-200';
+                const icon = b.querySelector('i');
+                const title = b.querySelector('.font-bold');
+                if (title) title.classList.remove('text-white');
+            });
+            btn.className = 'rubro-btn p-3 rounded-2xl border text-left transition-all duration-200 border-indigo-500 bg-indigo-500/20 text-white shadow-lg shadow-indigo-500/20';
+            const title = btn.querySelector('.font-bold');
+            if (title) title.classList.add('text-white');
+            
+            const nombreSpan = document.getElementById('rubro-nombre-seleccionado');
+            const waBtn = document.getElementById('rubro-whatsapp-btn');
+            
+            if (nombreSpan) nombreSpan.textContent = nombre;
+            if (waBtn) {
+                const mensaje = `Hola, me comunico desde la web de Traxionar. Quisiera solicitar asesoramiento y cotización para el sistema de ${nombre}.`;
+                waBtn.href = `https://wa.me/543436512434?text=${encodeURIComponent(mensaje)}`;
+            }
+        }
+
+        // Generar dinámicamente los Scroll Dots para cada sección
+        const scrollDotsDock = document.getElementById('scroll-dots-dock');
+        const allSections = document.querySelectorAll('.snap-section');
+
+        const sectionTitlesMap = {
+            'inicio': 'Inicio',
+            'ventas': 'Punto de Venta Ágil',
+            'caja': 'Caja & Cierre Z',
+            'productos': 'Catálogo & Inventario',
+            'lotes': 'Lotes & Vencimientos',
+            'compras': 'Compras',
+            'proveedores': 'Proveedores',
+            'rrhh': 'RRHH & Asistencia',
+            'logistica': 'Logística & Flota',
+            'clientes': 'Clientes & Cta. Cte.',
+            'sucursales': 'Multi-Sucursales',
+            'presupuestos': 'Presupuestos PDF',
+            'carta-qr': 'Carta QR & Reservas',
+            'mercadopago': 'Mercado Pago Point/QR',
+            'servicios-web': 'Streaming & Web',
+            'ecosistema': 'Ecosistema de Sistemas',
+            'partrax': 'Partrax (Estacionamientos)',
+            'caseqr': 'CaseQR (Accesos QR)',
+            'tars-crm': 'TARS CRM (Celulares)',
+            'lander-tpv': 'Lander Barbería & POS',
+            'gym-traxionar': 'Traxionar Gym',
+            'planes': 'Planes & Cotizador'
+        };
+
+        if (scrollDotsDock && allSections.length > 0) {
+            allSections.forEach((sec, idx) => {
+                const id = sec.id;
+                const title = sectionTitlesMap[id] || id;
+
+                const dot = document.createElement('a');
+                dot.href = '#' + id;
+                dot.className = 'scroll-dot group relative flex items-center justify-center p-1';
+                dot.setAttribute('aria-label', title);
+                dot.innerHTML = `
+                    <span class="dot-indicator w-2 h-2 rounded-full bg-white/30 group-hover:bg-white group-hover:scale-125 transition-all"></span>
+                    <span class="absolute right-full mr-3 px-2.5 py-1 rounded-lg bg-black/90 text-white text-[11px] font-semibold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl border border-white/15">
+                        ${title}
+                    </span>
+                `;
+
+                dot.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    sec.scrollIntoView({ behavior: 'smooth' });
+                });
+
+                scrollDotsDock.appendChild(dot);
+            });
+        }
+
+        // Resaltar el Scroll Dot activo según la posición de scroll
+        function updateActiveScrollDot() {
+            const dots = document.querySelectorAll('.scroll-dot');
+            const scrollPos = container.scrollTop + (window.innerHeight / 2.5);
+
+            allSections.forEach((sec, i) => {
+                const top = sec.offsetTop;
+                const h = sec.offsetHeight;
+                if (scrollPos >= top && scrollPos < top + h) {
+                    dots.forEach((d, di) => {
+                        const indicator = d.querySelector('.dot-indicator');
+                        if (di === i) {
+                            indicator.className = 'dot-indicator w-2.5 h-2.5 rounded-full !bg-indigo-400 !scale-150 shadow-[0_0_10px_rgba(129,140,248,0.9)] transition-all';
+                        } else {
+                            indicator.className = 'dot-indicator w-2 h-2 rounded-full bg-white/30 group-hover:bg-white group-hover:scale-125 transition-all';
+                        }
+                    });
+                }
+            });
+        }
 
         // Desktop TPV Dropdown click & outside-click support
         const tpvDropdownContainer = document.getElementById('tpv-dropdown-container');
