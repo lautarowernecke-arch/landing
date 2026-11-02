@@ -1637,18 +1637,119 @@
         <section id="planes" class="snap-section bg-[#050505] flex flex-col items-center justify-center relative">
             <div class="relative content-z flex flex-col items-center justify-center px-4 w-full py-16 md:py-20">
                 
-                <div class="text-center mb-8 max-w-3xl reveal mt-4">
+                <div class="text-center mb-6 max-w-3xl reveal mt-4">
                     <span class="px-3.5 py-1 rounded-full bg-indigo-500/20 border border-indigo-500/40 text-indigo-300 text-xs font-bold uppercase tracking-widest">
                         <i class="fas fa-tags mr-1.5"></i> Precios Transparentes y Sin Sorpresas
                     </span>
                     <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-3 mt-2 tracking-tight">Planes y Precios Claros para tu Negocio</h2>
-                    <p class="text-gray-300 text-sm md:text-base max-w-2xl mx-auto">Elige el plan ideal según la etapa de tu comercio. Activa en minutos y paga de forma segura mediante Mercado Pago.</p>
+                    <p class="text-gray-300 text-sm md:text-base max-w-2xl mx-auto">Elegí la solución exacta para tu tipo de comercio. Probá sin compromiso o activá tu suscripción mensual en minutos.</p>
                 </div>
 
-                <!-- Grid de 3 Planes Claros -->
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 w-full max-w-7xl justify-center items-stretch px-4 reveal delay-100 mb-10">
+                <!-- Selector de Pestañas Interactivas (Tabs) -->
+                <div class="flex items-center justify-center p-1.5 rounded-2xl bg-white/5 border border-white/10 mb-8 max-w-xl w-full mx-auto shadow-inner reveal">
+                    <button type="button" id="planes-tab-tpv-btn" onclick="switchPlanesTab('tpv')" class="flex-1 py-2.5 px-3 sm:px-4 rounded-xl font-bold text-xs sm:text-sm transition-all duration-300 flex items-center justify-center gap-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg shadow-indigo-600/30">
+                        <i class="fas fa-cash-register"></i>
+                        <span>Traxionar TPV</span>
+                        <span class="hidden sm:inline text-[11px] opacity-80 font-normal">(Comercios &amp; Gastro)</span>
+                    </button>
+                    <button type="button" id="planes-tab-lander-btn" onclick="switchPlanesTab('lander')" class="flex-1 py-2.5 px-3 sm:px-4 rounded-xl font-semibold text-xs sm:text-sm transition-all duration-300 flex items-center justify-center gap-2 text-gray-300 hover:text-white hover:bg-white/5">
+                        <i class="fas fa-store text-emerald-400"></i>
+                        <span>Lander POS</span>
+                        <span class="hidden sm:inline text-[11px] opacity-80 font-normal">(Minimarkets &amp; Barberías)</span>
+                    </button>
+                </div>
+
+                <!-- CONTENIDO PESTAÑA 1: Traxionar TPV (Comercios & Gastronomía) -->
+                <div id="planes-content-tpv" class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-5xl justify-center items-stretch px-4 reveal delay-100 mb-10">
                     
-                    <!-- Plan 1: Lander Starter (Gratis) -->
+                    <!-- Card 1.1: Demo / Prueba Gratuita Sin Cargo -->
+                    <div class="glass-card p-6 md:p-8 rounded-3xl w-full border border-indigo-500/30 relative bg-[#0a0a0a] flex flex-col justify-between hover:border-indigo-500/60 transition-all duration-300">
+                        <div class="absolute top-0 right-8 transform -translate-y-1/2">
+                            <span class="bg-indigo-500/20 border border-indigo-500/40 text-indigo-300 text-[11px] font-extrabold uppercase tracking-wider py-1 px-3 rounded-full">
+                                <i class="fas fa-play-circle mr-1"></i> Demo Sin Cargo
+                            </span>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-2 mb-2">
+                                <i class="fas fa-desktop text-indigo-400 text-lg"></i>
+                                <h3 class="text-xl md:text-2xl font-bold text-white">Prueba &amp; Demo en Vivo</h3>
+                            </div>
+                            <p class="text-gray-400 text-xs mb-5">Probá el software comercial y gastronómico antes de contratar, sin ningún compromiso.</p>
+                            
+                            <div class="mb-5 pb-5 border-b border-white/10">
+                                <div class="flex items-baseline">
+                                    <span class="text-4xl md:text-5xl font-black text-indigo-300">100% Gratis</span>
+                                    <span class="text-gray-400 text-xs font-medium ml-2">/ sin tarjeta</span>
+                                </div>
+                                <span class="text-[11px] text-indigo-300/80 font-medium mt-1 block">Acceso inmediato al entorno de pruebas guiado</span>
+                            </div>
+
+                            <ul class="space-y-3 mb-8 text-xs md:text-sm text-gray-300">
+                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-indigo-400 w-4"></i> <span>Tour completo por el <strong>Punto de Venta (TPV) y Backoffice</strong></span></li>
+                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-indigo-400 w-4"></i> <span>Prueba de <strong>Facturación AFIP</strong> en modo homologación</span></li>
+                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-indigo-400 w-4"></i> <span>Emisión de <strong>tickets térmicos 58/88mm</strong> y lector de barras</span></li>
+                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-indigo-400 w-4"></i> <span>Módulo Gastronómico: <strong>mesas, comandas y carta QR</strong></span></li>
+                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-indigo-400 w-4"></i> <span>Inventario avanzado, alertas de stock mínimo y lotes</span></li>
+                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-indigo-400 w-4"></i> <span><strong>Asesoramiento personalizado</strong> sin compromiso de compra</span></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <a href="https://wa.me/543436512434?text=Hola,%20quisiera%20solicitar%20una%20demostraci%C3%B3n%20gratuita%20en%20vivo%20de%20Traxionar%20TPV." target="_blank" rel="noopener noreferrer" class="block w-full bg-white/10 hover:bg-white/20 border border-white/20 text-white py-3.5 rounded-xl font-bold text-center transition duration-300 hover:scale-[1.02] shadow-md">
+                                <i class="fab fa-whatsapp text-emerald-400 mr-1.5 text-base"></i> Solicitar Demo en Vivo
+                            </a>
+                            <p class="text-[10px] text-gray-500 text-center mt-2.5">Coordiná una demo guiada por WhatsApp o videollamada.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 1.2: Plan Mensual TPV Full ($31.000) -->
+                    <div class="glass-card p-6 md:p-8 rounded-3xl w-full border-2 border-indigo-500 relative bg-gradient-to-b from-[#11102a] via-[#0d0c1e] to-[#0a0a0a] flex flex-col justify-between shadow-[0_15px_40px_rgba(99,102,241,0.25)] hover:border-indigo-400 transition-all duration-300">
+                        <div class="absolute top-0 right-8 transform -translate-y-1/2">
+                            <span class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white text-[11px] font-black uppercase tracking-wider py-1 px-3.5 rounded-full shadow-lg">
+                                <i class="fas fa-crown mr-1"></i> Suite Full TPV
+                            </span>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-2 mb-2">
+                                <i class="fas fa-cash-register text-indigo-400 text-lg"></i>
+                                <h3 class="text-xl md:text-2xl font-bold text-white">Traxionar TPV Full</h3>
+                            </div>
+                            <p class="text-gray-400 text-xs mb-5">El software comercial integral para comercios, cadenas multi-sucursal y gastronomía.</p>
+
+                            <div class="mb-5 pb-5 border-b border-white/10">
+                                <div class="flex items-baseline">
+                                    <span class="text-4xl md:text-5xl font-black text-white">$ 31.000</span>
+                                    <span class="text-gray-400 text-xs font-medium ml-2">ARS / mes</span>
+                                </div>
+                                <span class="text-[11px] text-indigo-300/90 font-semibold mt-1 block">Facturación AFIP nativa + Multi-Sucursal + Gastronomía</span>
+                            </div>
+
+                            <ul class="space-y-3 mb-8 text-xs md:text-sm text-gray-300">
+                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-indigo-400 w-4"></i> <span><strong>Facturación electrónica AFIP</strong> directa (58/88mm y A4)</span></li>
+                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-indigo-400 w-4"></i> <span><strong>Multi-Sucursal</strong> con caja y Cierre Z independiente</span></li>
+                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-indigo-400 w-4"></i> <span><strong>Mercado Pago integrado:</strong> Point Smart/Plus y cobro QR</span></li>
+                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-indigo-400 w-4"></i> <span>Inventario avanzado, kits, lotes y vencimientos PEPS</span></li>
+                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-indigo-400 w-4"></i> <span>Carta Digital QR, comandas de cocina y mesas</span></li>
+                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-indigo-400 w-4"></i> <span>Compras multimoneda (ARS/USD) y proveedores</span></li>
+                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-indigo-400 w-4"></i> <span>Presupuestos PDF, Logística de flota y RRHH</span></li>
+                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-indigo-400 w-4"></i> <span>Actualizaciones continuas y soporte prioritario</span></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <a href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=fe867317de40463d86f5d4d90eee39b1" target="_blank" rel="noopener noreferrer" class="block w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white py-3.5 rounded-xl font-black text-center transition duration-300 shadow-[0_0_20px_rgba(99,102,241,0.4)] hover:scale-[1.02]">
+                                <i class="fas fa-shield-alt mr-1.5"></i> Suscribirme por $31.000 / mes
+                            </a>
+                            <p class="text-[10px] text-gray-400 text-center mt-2.5">Suscripción oficial en Mercado Pago Argentina.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- CONTENIDO PESTAÑA 2: Lander (Minimarkets & Barberías) -->
+                <div id="planes-content-lander" class="hidden grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-5xl justify-center items-stretch px-4 reveal delay-100 mb-10">
+                    
+                    <!-- Card 2.1: Lander Starter (Gratis) -->
                     <div class="glass-card p-6 md:p-8 rounded-3xl w-full border border-emerald-500/30 relative bg-[#0a0a0a] flex flex-col justify-between hover:border-emerald-500/60 transition-all duration-300">
                         <div class="absolute top-0 right-8 transform -translate-y-1/2">
                             <span class="bg-emerald-500 text-black text-[11px] font-extrabold uppercase tracking-wider py-1 px-3 rounded-full shadow-md">
@@ -1688,36 +1789,36 @@
                         </div>
                     </div>
 
-                    <!-- Plan 2: Sistemas por Rubro & Lander Pro ($15.000) -->
+                    <!-- Card 2.2: Lander Pro ($15.000) -->
                     <div class="glass-card p-6 md:p-8 rounded-3xl w-full border-2 border-teal-500/50 relative bg-gradient-to-b from-[#0c1613] via-[#09100e] to-[#0a0a0a] flex flex-col justify-between shadow-[0_10px_30px_rgba(20,184,166,0.15)] hover:border-teal-400 transition-all duration-300">
                         <div class="absolute top-0 right-8 transform -translate-y-1/2">
                             <span class="bg-gradient-to-r from-teal-400 to-emerald-400 text-black text-[11px] font-extrabold uppercase tracking-wider py-1 px-3.5 rounded-full shadow-lg">
-                                <i class="fas fa-star mr-1"></i> Especializado por Rubro
+                                <i class="fas fa-bolt mr-1"></i> Ilimitado &amp; Turnero
                             </span>
                         </div>
                         <div>
                             <div class="flex items-center gap-2 mb-2">
-                                <i class="fas fa-cubes text-teal-400 text-lg"></i>
-                                <h3 class="text-xl md:text-2xl font-bold text-white">Sistemas por Rubro</h3>
+                                <i class="fas fa-gem text-teal-400 text-lg"></i>
+                                <h3 class="text-xl md:text-2xl font-bold text-white">Lander Pro</h3>
                             </div>
-                            <p class="text-gray-400 text-xs mb-5">Válido para <strong>Lander Pro</strong>, <strong>Partrax</strong>, <strong>CaseQR</strong>, <strong>TARS CRM</strong> o <strong>Gym</strong>.</p>
+                            <p class="text-gray-400 text-xs mb-5">Para comercios consolidados, minimarkets de alto flujo y barberías con equipo.</p>
 
                             <div class="mb-5 pb-5 border-b border-white/10">
                                 <div class="flex items-baseline">
                                     <span class="text-4xl md:text-5xl font-black text-white">$ 15.000</span>
                                     <span class="text-gray-400 text-xs font-medium ml-2">ARS / mes</span>
                                 </div>
-                                <span class="text-[11px] text-teal-300/90 font-semibold mt-1 block">Un solo precio fijo para tu sistema vertical</span>
+                                <span class="text-[11px] text-teal-300/90 font-semibold mt-1 block">Todo ilimitado + Turnero WhatsApp + Comisiones</span>
                             </div>
 
                             <ul class="space-y-3 mb-8 text-xs md:text-sm text-gray-300">
                                 <li class="flex items-center gap-2.5"><i class="fas fa-check text-teal-400 w-4"></i> <span><strong>Ventas y operaciones ilimitadas</strong></span></li>
-                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-teal-400 w-4"></i> <span><strong>Productos / registros ilimitados</strong></span></li>
-                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-teal-400 w-4"></i> <span><strong>Múltiples usuarios y cajeros</strong></span></li>
-                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-teal-400 w-4"></i> <span><strong>Lander Pro:</strong> Turnero WhatsApp, comisiones y Kardex</span></li>
-                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-teal-400 w-4"></i> <span><strong>Partrax:</strong> Cocheras, mapa y patentes</span></li>
-                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-teal-400 w-4"></i> <span><strong>TARS CRM:</strong> Reparaciones de celulares e IMEI</span></li>
-                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-teal-400 w-4"></i> <span><strong>CaseQR / Gym:</strong> Accesos QR o socios y rutinas</span></li>
+                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-teal-400 w-4"></i> <span><strong>Productos y catálogo ilimitados</strong></span></li>
+                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-teal-400 w-4"></i> <span><strong>Múltiples usuarios y cajeros</strong> simultáneos</span></li>
+                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-teal-400 w-4"></i> <span><strong>Turnero automatizado por WhatsApp</strong></span></li>
+                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-teal-400 w-4"></i> <span><strong>Comisiones de barberos</strong> y liquidación por box</span></li>
+                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-teal-400 w-4"></i> <span><strong>Kardex avanzado</strong> y cuentas corrientes (fiado)</span></li>
+                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-teal-400 w-4"></i> <span>Soporte prioritario y copias de seguridad continuas</span></li>
                             </ul>
                         </div>
 
@@ -1729,50 +1830,78 @@
                         </div>
                     </div>
 
-                    <!-- Plan 3: Traxionar TPV Full ($31.000) -->
-                    <div class="glass-card p-6 md:p-8 rounded-3xl w-full border-2 border-indigo-500 relative bg-gradient-to-b from-[#11102a] via-[#0d0c1e] to-[#0a0a0a] flex flex-col justify-between shadow-[0_15px_40px_rgba(99,102,241,0.25)] hover:border-indigo-400 transition-all duration-300">
-                        <div class="absolute top-0 right-8 transform -translate-y-1/2">
-                            <span class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white text-[11px] font-black uppercase tracking-wider py-1 px-3.5 rounded-full shadow-lg">
-                                <i class="fas fa-crown mr-1"></i> Suite Full TPV
-                            </span>
-                        </div>
-                        <div>
-                            <div class="flex items-center gap-2 mb-2">
-                                <i class="fas fa-cash-register text-indigo-400 text-lg"></i>
-                                <h3 class="text-xl md:text-2xl font-bold text-white">Traxionar TPV Full</h3>
-                            </div>
-                            <p class="text-gray-400 text-xs mb-5">El software comercial integral para comercios, cadenas multi-sucursal y gastronomía.</p>
-
-                            <div class="mb-5 pb-5 border-b border-white/10">
-                                <div class="flex items-baseline">
-                                    <span class="text-4xl md:text-5xl font-black text-white">$ 31.000</span>
-                                    <span class="text-gray-400 text-xs font-medium ml-2">ARS / mes</span>
-                                </div>
-                                <span class="text-[11px] text-indigo-300/90 font-semibold mt-1 block">Facturación AFIP nativa + Multi-Sucursal + Gastronomía</span>
-                            </div>
-
-                            <ul class="space-y-3 mb-8 text-xs md:text-sm text-gray-300">
-                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-indigo-400 w-4"></i> <span><strong>Facturación electrónica AFIP</strong> directa (58/88mm)</span></li>
-                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-indigo-400 w-4"></i> <span><strong>Multi-Sucursal</strong> con caja y Cierre Z independiente</span></li>
-                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-indigo-400 w-4"></i> <span><strong>Mercado Pago integrado:</strong> Point Smart/Plus y QR</span></li>
-                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-indigo-400 w-4"></i> <span>Inventario avanzado, kits, lotes y vencimientos PEPS</span></li>
-                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-indigo-400 w-4"></i> <span>Carta Digital QR, comandas de cocina y mesas</span></li>
-                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-indigo-400 w-4"></i> <span>Compras multimoneda (ARS/USD) y proveedores</span></li>
-                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-indigo-400 w-4"></i> <span>Presupuestos PDF, Logística de flota y RRHH</span></li>
-                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-indigo-400 w-4"></i> <span>Actualizaciones continuas y soporte prioritario</span></li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <a href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=fe867317de40463d86f5d4d90eee39b1" target="_blank" rel="noopener noreferrer" class="block w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white py-3.5 rounded-xl font-black text-center transition duration-300 shadow-[0_0_20px_rgba(99,102,241,0.4)] hover:scale-[1.02]">
-                                <i class="fas fa-shield-alt mr-1.5"></i> Suscribirme por $31.000 / mes
-                            </a>
-                            <p class="text-[10px] text-gray-400 text-center mt-2.5">Suscripción oficial en Mercado Pago Argentina.</p>
-                        </div>
-                    </div>
-
                 </div>
 
+                <!-- BLOQUE INFERIOR: Software Vertical Especializado a Medida -->
+                <div class="w-full max-w-5xl px-4 mb-10 reveal delay-150">
+                    <div class="glass-card p-6 md:p-8 rounded-3xl border border-amber-500/30 bg-gradient-to-b from-[#14120a] via-[#0d0c07] to-[#0a0a0a] shadow-[0_10px_35px_rgba(245,158,11,0.12)]">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-5 border-b border-white/10">
+                            <div>
+                                <span class="px-3 py-1 rounded-full bg-amber-500/20 border border-amber-500/40 text-amber-300 text-[11px] font-bold uppercase tracking-wider">
+                                    <i class="fas fa-cubes mr-1.5"></i> Software Vertical Especializado
+                                </span>
+                                <h3 class="text-xl md:text-3xl font-extrabold text-white mt-2">¿Buscás una solución específica para tu rubro?</h3>
+                            </div>
+                            <div class="text-left md:text-right">
+                                <span class="text-2xl md:text-3xl font-black text-amber-400">$ 15.000</span>
+                                <span class="text-gray-400 text-xs block">ARS / mes &bull; Tarifa plana</span>
+                            </div>
+                        </div>
+
+                        <!-- 4 Módulos Verticales -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+                            <div class="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-amber-500/40 transition duration-300">
+                                <div class="w-10 h-10 rounded-xl bg-amber-500/20 flex items-center justify-center text-amber-400 text-lg mb-3">
+                                    <i class="fas fa-car"></i>
+                                </div>
+                                <h4 class="font-bold text-white text-sm mb-1">Partrax</h4>
+                                <p class="text-gray-400 text-xs leading-relaxed">Cocheras, playas de estacionamiento, mapa de boxes y lector de patentes.</p>
+                            </div>
+
+                            <div class="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-amber-500/40 transition duration-300">
+                                <div class="w-10 h-10 rounded-xl bg-violet-500/20 flex items-center justify-center text-violet-400 text-lg mb-3">
+                                    <i class="fas fa-mobile-alt"></i>
+                                </div>
+                                <h4 class="font-bold text-white text-sm mb-1">TARS CRM</h4>
+                                <p class="text-gray-400 text-xs leading-relaxed">Servicio técnico, reparaciones celulares, seguimiento IMEI y garantías.</p>
+                            </div>
+
+                            <div class="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-amber-500/40 transition duration-300">
+                                <div class="w-10 h-10 rounded-xl bg-cyan-500/20 flex items-center justify-center text-cyan-400 text-lg mb-3">
+                                    <i class="fas fa-qrcode"></i>
+                                </div>
+                                <h4 class="font-bold text-white text-sm mb-1">CaseQR</h4>
+                                <p class="text-gray-400 text-xs leading-relaxed">Control de accesos QR, fichada de personal y bitácora para porterías y barrios.</p>
+                            </div>
+
+                            <div class="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-amber-500/40 transition duration-300">
+                                <div class="w-10 h-10 rounded-xl bg-rose-500/20 flex items-center justify-center text-rose-400 text-lg mb-3">
+                                    <i class="fas fa-dumbbell"></i>
+                                </div>
+                                <h4 class="font-bold text-white text-sm mb-1">Traxionar Gym</h4>
+                                <p class="text-gray-400 text-xs leading-relaxed">Gimnasios, socios, cuotas mensuales, rutinas personalizadas y portal del alumno.</p>
+                            </div>
+                        </div>
+
+                        <!-- Barra de llamada a la acción -->
+                        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 rounded-2xl bg-amber-500/10 border border-amber-500/20">
+                            <div>
+                                <span class="text-xs font-semibold text-amber-200 block">Suscripción única para cualquiera de los sistemas verticales</span>
+                                <span class="text-[11px] text-gray-400">Activación inmediata en la nube con soporte oficial</span>
+                            </div>
+                            <div class="flex flex-wrap items-center gap-3 w-full sm:w-auto">
+                                <a href="https://mpago.la/1v2sA2y" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-5 py-2.5 rounded-xl font-black text-xs bg-amber-400 hover:bg-amber-300 text-black transition duration-300 shadow-[0_0_15px_rgba(245,158,11,0.3)] text-center">
+                                    <i class="fas fa-bolt mr-1"></i> Suscribirme por $15.000 / mes
+                                </a>
+                                <a href="#cotizador-express" class="w-full sm:w-auto px-4 py-2.5 rounded-xl font-bold text-xs bg-white/10 hover:bg-white/20 text-white transition duration-300 text-center">
+                                    <i class="fas fa-calculator mr-1"></i> Cotizar Rubro
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="cotizador-express"></div>
                 <!-- Cotizador Rápido por Rubro para WhatsApp -->
                 <div class="w-full max-w-5xl px-4 mb-8 reveal delay-150">
                     <div class="glass-card p-6 md:p-8 rounded-3xl border border-white/10 bg-gradient-to-b from-[#0f0f15] to-[#07070a]">
@@ -2154,6 +2283,34 @@
                 landerSection.style.backgroundImage = "url('https://images.unsplash.com/photo-1604719312566-8912e9227c6a?auto=format&fit=crop&w=1920&q=80')";
             }
         }
-    </script>
+    
+        // Alternar pestañas de Planes (Traxionar TPV vs Lander POS)
+        function switchPlanesTab(tab) {
+            const btnTpv = document.getElementById('planes-tab-tpv-btn');
+            const btnLander = document.getElementById('planes-tab-lander-btn');
+            const contentTpv = document.getElementById('planes-content-tpv');
+            const contentLander = document.getElementById('planes-content-lander');
+
+            if (!btnTpv || !btnLander || !contentTpv || !contentLander) return;
+
+            if (tab === 'tpv') {
+                btnTpv.className = 'flex-1 py-2.5 px-3 sm:px-4 rounded-xl font-bold text-xs sm:text-sm transition-all duration-300 flex items-center justify-center gap-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg shadow-indigo-600/30';
+                btnLander.className = 'flex-1 py-2.5 px-3 sm:px-4 rounded-xl font-semibold text-xs sm:text-sm transition-all duration-300 flex items-center justify-center gap-2 text-gray-300 hover:text-white hover:bg-white/5';
+                
+                contentTpv.classList.remove('hidden');
+                contentTpv.classList.add('grid');
+                contentLander.classList.add('hidden');
+                contentLander.classList.remove('grid');
+            } else {
+                btnLander.className = 'flex-1 py-2.5 px-3 sm:px-4 rounded-xl font-bold text-xs sm:text-sm transition-all duration-300 flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 text-black shadow-lg shadow-emerald-500/30';
+                btnTpv.className = 'flex-1 py-2.5 px-3 sm:px-4 rounded-xl font-semibold text-xs sm:text-sm transition-all duration-300 flex items-center justify-center gap-2 text-gray-300 hover:text-white hover:bg-white/5';
+
+                contentLander.classList.remove('hidden');
+                contentLander.classList.add('grid');
+                contentTpv.classList.add('hidden');
+                contentTpv.classList.remove('grid');
+            }
+        }
+</script>
 </body>
 </html>
