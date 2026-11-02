@@ -1635,162 +1635,142 @@
 
         <!-- Section 11: Planes y Suscripción -->
         <section id="planes" class="snap-section bg-[#050505] flex flex-col items-center justify-center relative">
-            <div class="relative content-z flex flex-col items-center justify-center px-4 w-full py-20">
+            <div class="relative content-z flex flex-col items-center justify-center px-4 w-full py-16 md:py-20">
                 
-                <div class="text-center mb-8 max-w-3xl reveal mt-6">
-                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-3 tracking-tight">Planes y Precios del Sistema de Gestión Comercial</h2>
-                    <p class="text-gray-400 text-base md:text-lg">Potencie su empresa hoy con nuestro sistema de gestión integral o nuestras soluciones verticales especializadas.</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-5xl justify-center items-stretch px-4 reveal delay-100 mb-8">
-                    <!-- Pricing Card 1: Traxionar TPV Integral -->
-                    <div class="glass-card p-8 rounded-3xl w-full border border-indigo-500/30 relative bg-[#0a0a0a] flex flex-col justify-between">
-                        <div class="absolute top-0 right-8 transform -translate-y-1/2">
-                            <span class="bg-indigo-600 text-white text-xs font-bold uppercase tracking-wider py-1 px-3 rounded-full">Licencia Full</span>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-semibold mb-2">Traxionar Gestión & TPV</h3>
-                            <p class="text-gray-400 text-sm mb-6">Acceso total e ilimitado a todos los módulos del sistema de gestión multi-sucursal.</p>
-                            
-                            <ul class="space-y-3 mb-8 text-sm text-gray-300">
-                                <li class="flex items-center gap-2"><i class="fas fa-check text-indigo-400 w-5"></i> Punto de Venta (TPV) ágil y Facturación AFIP</li>
-                                <li class="flex items-center gap-2"><i class="fas fa-check text-indigo-400 w-5"></i> Inventario, Kits, Lotes y Vencimientos</li>
-                                <li class="flex items-center gap-2"><i class="fas fa-check text-indigo-400 w-5"></i> Multi-Sucursal con caja y Cierre Z independiente</li>
-                                <li class="flex items-center gap-2"><i class="fas fa-check text-indigo-400 w-5"></i> Cuentas Corrientes, Clientes y Proveedores</li>
-                                <li class="flex items-center gap-2"><i class="fas fa-check text-indigo-400 w-5"></i> Presupuestos PDF, Logística, Flota y RRHH</li>
-                                <li class="flex items-center gap-2"><i class="fas fa-check text-indigo-400 w-5"></i> Carta Digital QR, Mesas y Mercado Pago</li>
-                                <li class="flex items-center gap-2"><i class="fas fa-check text-indigo-400 w-5"></i> Actualizaciones continuas y Soporte Técnico</li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <!-- Link a MercadoPago -->
-                            <a href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=fe867317de40463d86f5d4d90eee39b1" target="_blank" rel="noopener noreferrer" class="block w-full bg-indigo-600 text-white py-3.5 rounded-xl font-bold text-center hover:bg-indigo-500 transition duration-300 shadow-[0_0_20px_rgba(79,70,229,0.3)] hover:scale-[1.02]">
-                                <i class="fas fa-shield-alt mr-2"></i> Suscribirse Ahora
-                            </a>
-                            <p class="text-[10px] text-gray-500 text-center mt-3">Pago seguro a través de MercadoPago Argentina.</p>
-                        </div>
-                    </div>
-
-                    <!-- Pricing Card 2: Ecosistema de Sistemas Especializados -->
-                    <div class="glass-card p-8 rounded-3xl w-full border border-white/15 relative bg-[#0a0a0a] flex flex-col justify-between">
-                        <div class="absolute top-0 right-8 transform -translate-y-1/2">
-                            <span class="bg-gradient-to-r from-amber-500 via-cyan-500 to-rose-500 text-white text-xs font-bold uppercase tracking-wider py-1 px-3 rounded-full">Suite Vertical</span>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-semibold mb-2">Sistemas Especializados</h3>
-                            <p class="text-gray-400 text-sm mb-6">Soluciones SaaS y licencias dedicadas adaptadas a la operativa específica de cada rubro.</p>
-                            
-                            <ul class="space-y-3.5 mb-8 text-sm text-gray-300">
-                                <li class="flex items-start gap-2.5">
-                                    <i class="fas fa-car text-amber-400 w-5 mt-1"></i>
-                                    <div><strong class="text-white">Partrax:</strong> Gestión de Parqueos, Mapa de Cocheras, Patentes y Abonados.</div>
-                                </li>
-                                <li class="flex items-start gap-2.5">
-                                    <i class="fas fa-qrcode text-cyan-400 w-5 mt-1"></i>
-                                    <div><strong class="text-white">CaseQR:</strong> Control de Acceso y Asistencia QR (Kiosco PWA), Guardia y Visitas.</div>
-                                </li>
-                                <li class="flex items-start gap-2.5">
-                                    <i class="fas fa-mobile-alt text-violet-400 w-5 mt-1"></i>
-                                    <div><strong class="text-white">TARS CRM:</strong> Tiendas de Celulares, Stock por IMEI y Órdenes de Servicio Técnico.</div>
-                                </li>
-                                <li class="flex items-start gap-2.5">
-                                    <i class="fas fa-scissors text-amber-400 w-5 mt-1"></i>
-                                    <div><strong class="text-white">Lander Barbería &amp; POS:</strong> Turnos WhatsApp, Comisiones de Barberos, Boxes y POS Minimarkets con Kardex.</div>
-                                </li>
-                                <li class="flex items-start gap-2.5">
-                                    <i class="fas fa-dumbbell text-rose-400 w-5 mt-1"></i>
-                                    <div><strong class="text-white">Gym Traxionar:</strong> Gestión de Gimnasios, Membresías, Rutinas y Portal del Socio.</div>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <a href="https://wa.me/543436512434?text=Hola,%20quisiera%20asesoramiento%20sobre%20los%20sistemas%20del%20ecosistema%20Traxionar%20(Partrax,%20CaseQR,%20TARS%20CRM,%20Lander%20TPV%20o%20Gym%20Traxionar)." target="_blank" rel="noopener noreferrer" class="block w-full bg-[#25D366] hover:bg-[#20bd5a] text-white py-3.5 rounded-xl font-bold text-center transition duration-300 shadow-[0_0_20px_rgba(37,211,102,0.3)] hover:scale-[1.02]">
-                                <i class="fab fa-whatsapp mr-2 text-lg"></i> Solicitar Demo o Cotización
-                            </a>
-                            <p class="text-[10px] text-gray-500 text-center mt-3">Implementación en la nube o en servidor propio con soporte personalizado.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Subtítulo / Bloque dedicado a Lander TPV & Barbería -->
-                <div class="text-center mb-6 max-w-2xl reveal">
-                    <span class="px-3.5 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 text-xs font-bold uppercase tracking-widest">
-                        <i class="fas fa-store mr-1.5"></i> Lander TPV &amp; Barberías
+                <div class="text-center mb-8 max-w-3xl reveal mt-4">
+                    <span class="px-3.5 py-1 rounded-full bg-indigo-500/20 border border-indigo-500/40 text-indigo-300 text-xs font-bold uppercase tracking-widest">
+                        <i class="fas fa-tags mr-1.5"></i> Precios Transparentes y Sin Sorpresas
                     </span>
-                    <h3 class="text-2xl md:text-3xl font-bold text-white mt-2">Planes Lander para tu Negocio</h3>
-                    <p class="text-gray-400 text-sm">Comienza gratis hoy mismo o escala a funciones ilimitadas para tu minimarket o salón.</p>
+                    <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-3 mt-2 tracking-tight">Planes y Precios Claros para tu Negocio</h2>
+                    <p class="text-gray-300 text-sm md:text-base max-w-2xl mx-auto">Elige el plan ideal según la etapa de tu comercio. Activa en minutos y paga de forma segura mediante Mercado Pago.</p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl justify-center items-stretch px-4 reveal delay-100 mb-12">
-                    <!-- Lander Plan Gratuito -->
-                    <div class="glass-card p-7 rounded-3xl w-full border border-emerald-500/30 relative bg-[#0a0a0a] flex flex-col justify-between">
+                <!-- Grid de 3 Planes Claros -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 w-full max-w-7xl justify-center items-stretch px-4 reveal delay-100 mb-10">
+                    
+                    <!-- Plan 1: Lander Starter (Gratis) -->
+                    <div class="glass-card p-6 md:p-8 rounded-3xl w-full border border-emerald-500/30 relative bg-[#0a0a0a] flex flex-col justify-between hover:border-emerald-500/60 transition-all duration-300">
                         <div class="absolute top-0 right-8 transform -translate-y-1/2">
-                            <span class="bg-emerald-500 text-black text-xs font-extrabold uppercase tracking-wider py-1 px-3 rounded-full">100% Gratis</span>
+                            <span class="bg-emerald-500 text-black text-[11px] font-extrabold uppercase tracking-wider py-1 px-3 rounded-full shadow-md">
+                                <i class="fas fa-gift mr-1"></i> 100% Gratis
+                            </span>
                         </div>
                         <div>
-                            <div class="flex items-baseline justify-between mb-2">
-                                <h4 class="text-2xl font-bold text-white">Plan Gratuito</h4>
+                            <div class="flex items-center gap-2 mb-2">
+                                <i class="fas fa-store text-emerald-400 text-lg"></i>
+                                <h3 class="text-xl md:text-2xl font-bold text-white">Lander Starter</h3>
                             </div>
-                            <div class="mb-4">
-                                <span class="text-4xl font-extrabold text-emerald-400">$0</span>
-                                <span class="text-gray-400 text-xs font-medium ml-1">/ para siempre</span>
+                            <p class="text-gray-400 text-xs mb-5">Para pequeños comercios, despensas y barberías que recién inician.</p>
+                            
+                            <div class="mb-5 pb-5 border-b border-white/10">
+                                <div class="flex items-baseline">
+                                    <span class="text-4xl md:text-5xl font-black text-emerald-400">$0</span>
+                                    <span class="text-gray-400 text-xs font-medium ml-2">/ para siempre</span>
+                                </div>
+                                <span class="text-[11px] text-emerald-300/80 font-medium mt-1 block">Sin tarjeta requerida &bull; Activación en 1 clic</span>
                             </div>
-                            <p class="text-gray-400 text-xs mb-6">Ideal para pequeños comercios, despensas y barberías que inician.</p>
 
-                            <ul class="space-y-2.5 mb-8 text-sm text-gray-300">
-                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-emerald-400 w-4"></i> <span><strong>1.000 ventas</strong> al mes</span></li>
+                            <ul class="space-y-3 mb-8 text-xs md:text-sm text-gray-300">
+                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-emerald-400 w-4"></i> <span>Hasta <strong>1.000 ventas</strong> al mes</span></li>
                                 <li class="flex items-center gap-2.5"><i class="fas fa-check text-emerald-400 w-4"></i> <span>Hasta <strong>500 productos</strong> en inventario</span></li>
-                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-emerald-400 w-4"></i> <span><strong>1 usuario</strong> (Administrador completo)</span></li>
-                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-emerald-400 w-4"></i> <span>Punto de Venta POS &amp; Emisión de tickets</span></li>
-                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-emerald-400 w-4"></i> <span>Control de caja, turnos y clientes</span></li>
-                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-emerald-400 w-4"></i> <span>Módulos de Barbería o Distribuidora opcionales</span></li>
-                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-emerald-400 w-4"></i> <span>Sin vencimiento ni tarjeta requerida</span></li>
+                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-emerald-400 w-4"></i> <span><strong>1 usuario</strong> administrador</span></li>
+                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-emerald-400 w-4"></i> <span>Punto de Venta POS &amp; tickets térmicos</span></li>
+                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-emerald-400 w-4"></i> <span>Control de caja diario y clientes</span></li>
+                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-emerald-400 w-4"></i> <span>Módulo de Barbería o Minimarket</span></li>
                             </ul>
                         </div>
 
                         <div>
-                            <a href="https://lander.traxionar.com.ar/register" target="_blank" rel="noopener noreferrer" class="block w-full bg-emerald-500 hover:bg-emerald-400 text-black py-3 rounded-xl font-bold text-center transition duration-300 shadow-[0_0_15px_rgba(16,185,129,0.3)] hover:scale-[1.02]">
+                            <a href="https://lander.traxionar.com.ar/register" target="_blank" rel="noopener noreferrer" class="block w-full bg-emerald-500 hover:bg-emerald-400 text-black py-3.5 rounded-xl font-black text-center transition duration-300 shadow-[0_0_15px_rgba(16,185,129,0.3)] hover:scale-[1.02]">
                                 <i class="fas fa-user-plus mr-1.5"></i> Comenzar Gratis Ahora
                             </a>
-                            <p class="text-[10px] text-gray-500 text-center mt-2">Activación instantánea en la nube.</p>
+                            <p class="text-[10px] text-gray-500 text-center mt-2.5">Acceso inmediato en la nube sin costo.</p>
                         </div>
                     </div>
 
-                    <!-- Lander Plan Pro -->
-                    <div class="glass-card p-7 rounded-3xl w-full border border-emerald-500/40 relative bg-gradient-to-b from-[#0e1713] to-[#0a0a0a] flex flex-col justify-between">
+                    <!-- Plan 2: Sistemas por Rubro & Lander Pro ($15.000) -->
+                    <div class="glass-card p-6 md:p-8 rounded-3xl w-full border-2 border-teal-500/50 relative bg-gradient-to-b from-[#0c1613] via-[#09100e] to-[#0a0a0a] flex flex-col justify-between shadow-[0_10px_30px_rgba(20,184,166,0.15)] hover:border-teal-400 transition-all duration-300">
                         <div class="absolute top-0 right-8 transform -translate-y-1/2">
-                            <span class="bg-gradient-to-r from-emerald-400 to-teal-400 text-black text-xs font-extrabold uppercase tracking-wider py-1 px-3 rounded-full">Recomendado</span>
+                            <span class="bg-gradient-to-r from-teal-400 to-emerald-400 text-black text-[11px] font-extrabold uppercase tracking-wider py-1 px-3.5 rounded-full shadow-lg">
+                                <i class="fas fa-star mr-1"></i> Especializado por Rubro
+                            </span>
                         </div>
                         <div>
-                            <div class="flex items-baseline justify-between mb-2">
-                                <h4 class="text-2xl font-bold text-white">Plan Pro</h4>
+                            <div class="flex items-center gap-2 mb-2">
+                                <i class="fas fa-cubes text-teal-400 text-lg"></i>
+                                <h3 class="text-xl md:text-2xl font-bold text-white">Sistemas por Rubro</h3>
                             </div>
-                            <div class="mb-4">
-                                <span class="text-4xl font-extrabold text-white">$ 15.000</span>
-                                <span class="text-gray-400 text-xs font-medium ml-1">ARS / mes</span>
-                            </div>
-                            <p class="text-gray-400 text-xs mb-6">Para comercios consolidados, minimarkets de alto flujo y barberías con equipo.</p>
+                            <p class="text-gray-400 text-xs mb-5">Válido para <strong>Lander Pro</strong>, <strong>Partrax</strong>, <strong>CaseQR</strong>, <strong>TARS CRM</strong> o <strong>Gym</strong>.</p>
 
-                            <ul class="space-y-2.5 mb-8 text-sm text-gray-300">
-                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-emerald-400 w-4"></i> <span><strong>Ventas ilimitadas</strong> por mes</span></li>
-                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-emerald-400 w-4"></i> <span><strong>Productos ilimitados</strong> en catálogo</span></li>
-                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-emerald-400 w-4"></i> <span><strong>Usuarios ilimitados</strong> (Cajeros, Almacén, Barberos)</span></li>
-                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-emerald-400 w-4"></i> <span>Kardex avanzado y auditoría completa</span></li>
-                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-emerald-400 w-4"></i> <span>Turnero WhatsApp &amp; comisiones de barberos</span></li>
-                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-emerald-400 w-4"></i> <span>Cuentas corrientes (fiado) y proveedores</span></li>
-                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-emerald-400 w-4"></i> <span>Soporte prioritario y copias de seguridad</span></li>
+                            <div class="mb-5 pb-5 border-b border-white/10">
+                                <div class="flex items-baseline">
+                                    <span class="text-4xl md:text-5xl font-black text-white">$ 15.000</span>
+                                    <span class="text-gray-400 text-xs font-medium ml-2">ARS / mes</span>
+                                </div>
+                                <span class="text-[11px] text-teal-300/90 font-semibold mt-1 block">Un solo precio fijo para tu sistema vertical</span>
+                            </div>
+
+                            <ul class="space-y-3 mb-8 text-xs md:text-sm text-gray-300">
+                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-teal-400 w-4"></i> <span><strong>Ventas y operaciones ilimitadas</strong></span></li>
+                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-teal-400 w-4"></i> <span><strong>Productos / registros ilimitados</strong></span></li>
+                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-teal-400 w-4"></i> <span><strong>Múltiples usuarios y cajeros</strong></span></li>
+                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-teal-400 w-4"></i> <span><strong>Lander Pro:</strong> Turnero WhatsApp, comisiones y Kardex</span></li>
+                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-teal-400 w-4"></i> <span><strong>Partrax:</strong> Cocheras, mapa y patentes</span></li>
+                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-teal-400 w-4"></i> <span><strong>TARS CRM:</strong> Reparaciones de celulares e IMEI</span></li>
+                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-teal-400 w-4"></i> <span><strong>CaseQR / Gym:</strong> Accesos QR o socios y rutinas</span></li>
                             </ul>
                         </div>
 
                         <div>
-                            <a href="https://mpago.la/1v2sA2y" target="_blank" rel="noopener noreferrer" class="block w-full bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-black py-3 rounded-xl font-bold text-center transition duration-300 shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:scale-[1.02]">
-                                <i class="fas fa-bolt mr-1.5"></i> Suscribirme al Plan Pro
+                            <a href="https://mpago.la/1v2sA2y" target="_blank" rel="noopener noreferrer" class="block w-full bg-gradient-to-r from-teal-400 to-emerald-400 hover:from-teal-300 hover:to-emerald-300 text-black py-3.5 rounded-xl font-black text-center transition duration-300 shadow-[0_0_20px_rgba(20,184,166,0.35)] hover:scale-[1.02]">
+                                <i class="fas fa-bolt mr-1.5"></i> Suscribirme por $15.000 / mes
                             </a>
-                            <p class="text-[10px] text-gray-500 text-center mt-2">Suscripción mensual automática con Mercado Pago.</p>
+                            <p class="text-[10px] text-gray-400 text-center mt-2.5">Suscripción automática y segura con Mercado Pago.</p>
                         </div>
                     </div>
+
+                    <!-- Plan 3: Traxionar TPV Full ($31.000) -->
+                    <div class="glass-card p-6 md:p-8 rounded-3xl w-full border-2 border-indigo-500 relative bg-gradient-to-b from-[#11102a] via-[#0d0c1e] to-[#0a0a0a] flex flex-col justify-between shadow-[0_15px_40px_rgba(99,102,241,0.25)] hover:border-indigo-400 transition-all duration-300">
+                        <div class="absolute top-0 right-8 transform -translate-y-1/2">
+                            <span class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white text-[11px] font-black uppercase tracking-wider py-1 px-3.5 rounded-full shadow-lg">
+                                <i class="fas fa-crown mr-1"></i> Suite Full TPV
+                            </span>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-2 mb-2">
+                                <i class="fas fa-cash-register text-indigo-400 text-lg"></i>
+                                <h3 class="text-xl md:text-2xl font-bold text-white">Traxionar TPV Full</h3>
+                            </div>
+                            <p class="text-gray-400 text-xs mb-5">El software comercial integral para comercios, cadenas multi-sucursal y gastronomía.</p>
+
+                            <div class="mb-5 pb-5 border-b border-white/10">
+                                <div class="flex items-baseline">
+                                    <span class="text-4xl md:text-5xl font-black text-white">$ 31.000</span>
+                                    <span class="text-gray-400 text-xs font-medium ml-2">ARS / mes</span>
+                                </div>
+                                <span class="text-[11px] text-indigo-300/90 font-semibold mt-1 block">Facturación AFIP nativa + Multi-Sucursal + Gastronomía</span>
+                            </div>
+
+                            <ul class="space-y-3 mb-8 text-xs md:text-sm text-gray-300">
+                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-indigo-400 w-4"></i> <span><strong>Facturación electrónica AFIP</strong> directa (58/88mm)</span></li>
+                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-indigo-400 w-4"></i> <span><strong>Multi-Sucursal</strong> con caja y Cierre Z independiente</span></li>
+                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-indigo-400 w-4"></i> <span><strong>Mercado Pago integrado:</strong> Point Smart/Plus y QR</span></li>
+                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-indigo-400 w-4"></i> <span>Inventario avanzado, kits, lotes y vencimientos PEPS</span></li>
+                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-indigo-400 w-4"></i> <span>Carta Digital QR, comandas de cocina y mesas</span></li>
+                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-indigo-400 w-4"></i> <span>Compras multimoneda (ARS/USD) y proveedores</span></li>
+                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-indigo-400 w-4"></i> <span>Presupuestos PDF, Logística de flota y RRHH</span></li>
+                                <li class="flex items-center gap-2.5"><i class="fas fa-check text-indigo-400 w-4"></i> <span>Actualizaciones continuas y soporte prioritario</span></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <a href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=fe867317de40463d86f5d4d90eee39b1" target="_blank" rel="noopener noreferrer" class="block w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white py-3.5 rounded-xl font-black text-center transition duration-300 shadow-[0_0_20px_rgba(99,102,241,0.4)] hover:scale-[1.02]">
+                                <i class="fas fa-shield-alt mr-1.5"></i> Suscribirme por $31.000 / mes
+                            </a>
+                            <p class="text-[10px] text-gray-400 text-center mt-2.5">Suscripción oficial en Mercado Pago Argentina.</p>
+                        </div>
+                    </div>
+
                 </div>
 
                 <!-- Cotizador Rápido por Rubro para WhatsApp -->
