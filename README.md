@@ -4,7 +4,7 @@ Sitio web y landing page oficial del ecosistema de software empresarial **TRAXIO
 
 ## 🚀 Ecosistema de Soluciones
 
-- **Traxionar TPV Multi-Sucursal**: Punto de Venta ágil, facturación electrónica AFIP, control de caja y cierre Z, catálogo/inventario, lotes y vencimientos PEPS, compras multimoneda, logística, clientes/cuentas corrientes, presupuestos PDF, Carta Digital QR e integración con Mercado Pago Point/QR.
+- **Traxionar TPV Multi-Sucursal**: Punto de Venta ágil, facturación electrónica AFIP, control de caja y cierre Z, catálogo/inventario, lotes y vencimientos PEPS, compras multimoneda, logística, clientes/cuentas corrientes, presupuestos PDF, Carta Digital QR, **Tienda Online gratis con dominio propio** (e-commerce sin comisiones sincronizado en tiempo real) e integración con Mercado Pago Point/QR.
 - **Partrax**: Gestión integral de playas de estacionamiento, cocheras y garajes con mapa interactivo en tiempo real y control por patente.
 - **CaseQR**: Control de acceso y asistencia de personal mediante códigos QR en modo Kiosco PWA, portal del empleado y bitácora de guardia/seguridad.
 - **TARS CRM**: Software CRM y gestión de laboratorio técnico para tiendas de telefonía móvil y servicio técnico con trazabilidad por IMEI.
