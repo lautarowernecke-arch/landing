@@ -531,75 +531,48 @@
                 </button>
 
                 <!-- Dropdown Panel -->
-                <div id="tpv-dropdown-menu" class="invisible opacity-0 translate-y-2 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 absolute left-0 top-full pt-2 w-[480px] z-50">
+                <div id="tpv-dropdown-menu" class="invisible opacity-0 translate-y-2 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 absolute left-0 top-full pt-2 w-[460px] z-50">
                     <div class="bg-[#0a0a0a]/95 backdrop-blur-xl border border-white/15 rounded-2xl p-4 shadow-[0_20px_50px_rgba(0,0,0,0.85)]">
                         <div class="flex items-center justify-between pb-2.5 mb-3 border-b border-white/10 px-2">
                             <span class="text-[11px] font-bold uppercase tracking-widest text-indigo-400">Sistema Traxionar TPV Multi-Sucursal</span>
-                            <span class="text-[10px] text-gray-400">15 Módulos</span>
+                            <span class="text-[10px] text-emerald-400 font-bold">13 Módulos en 4 Áreas</span>
                         </div>
-                        <div class="grid grid-cols-2 gap-1.5 text-xs">
-                            <a href="#ventas" class="tpv-dropdown-link flex items-center gap-2.5 p-2 rounded-xl hover:bg-white/10 text-gray-200 hover:text-white transition-colors">
-                                <i class="fas fa-cash-register text-indigo-400 w-4 text-center"></i>
-                                <span>Punto de Venta Ágil</span>
+                        <div class="grid grid-cols-2 gap-2 text-xs">
+                            <a href="#traxionar-tpv" onclick="switchTpvView('ventas')" class="tpv-dropdown-link flex items-start gap-2.5 p-2.5 rounded-xl hover:bg-white/10 text-gray-200 hover:text-white transition-colors group/item">
+                                <i class="fas fa-cash-register text-indigo-400 w-4 text-center mt-0.5" aria-hidden="true"></i>
+                                <div>
+                                    <span class="font-bold text-white block">Ventas &amp; Caja</span>
+                                    <span class="text-[10px] text-gray-400">TPV, AFIP, MP y Presupuestos</span>
+                                </div>
                             </a>
-                            <a href="#caja" class="tpv-dropdown-link flex items-center gap-2.5 p-2 rounded-xl hover:bg-white/10 text-gray-200 hover:text-white transition-colors">
-                                <i class="fas fa-chart-pie text-indigo-400 w-4 text-center"></i>
-                                <span>Caja y Cierre Z</span>
+                            <a href="#traxionar-tpv" onclick="switchTpvView('stock')" class="tpv-dropdown-link flex items-start gap-2.5 p-2.5 rounded-xl hover:bg-white/10 text-gray-200 hover:text-white transition-colors group/item">
+                                <i class="fas fa-boxes text-indigo-400 w-4 text-center mt-0.5" aria-hidden="true"></i>
+                                <div>
+                                    <span class="font-bold text-white block">Stock &amp; Compras</span>
+                                    <span class="text-[10px] text-gray-400">Catálogo, Lotes PEPS y Prov.</span>
+                                </div>
                             </a>
-                            <a href="#productos" class="tpv-dropdown-link flex items-center gap-2.5 p-2 rounded-xl hover:bg-white/10 text-gray-200 hover:text-white transition-colors">
-                                <i class="fas fa-boxes text-indigo-400 w-4 text-center"></i>
-                                <span>Catálogo e Inventario</span>
+                            <a href="#traxionar-tpv" onclick="switchTpvView('clientes')" class="tpv-dropdown-link flex items-start gap-2.5 p-2.5 rounded-xl hover:bg-white/10 text-gray-200 hover:text-white transition-colors group/item">
+                                <i class="fas fa-users text-indigo-400 w-4 text-center mt-0.5" aria-hidden="true"></i>
+                                <div>
+                                    <span class="font-bold text-white block">Clientes &amp; RRHH</span>
+                                    <span class="text-[10px] text-gray-400">Cta. Cte. (Fiado) y Fichadas PIN</span>
+                                </div>
                             </a>
-                            <a href="#lotes" class="tpv-dropdown-link flex items-center gap-2.5 p-2 rounded-xl hover:bg-white/10 text-gray-200 hover:text-white transition-colors">
-                                <i class="fas fa-calendar-times text-orange-400 w-4 text-center"></i>
-                                <span>Lotes y Vencimientos</span>
+                            <a href="#traxionar-tpv" onclick="switchTpvView('sucursales')" class="tpv-dropdown-link flex items-start gap-2.5 p-2.5 rounded-xl hover:bg-white/10 text-gray-200 hover:text-white transition-colors group/item">
+                                <i class="fas fa-warehouse text-indigo-400 w-4 text-center mt-0.5" aria-hidden="true"></i>
+                                <div>
+                                    <span class="font-bold text-white block">Sucursales &amp; Salón</span>
+                                    <span class="text-[10px] text-gray-400">Multi-local, Flota y Carta QR</span>
+                                </div>
                             </a>
-                            <a href="#compras" class="tpv-dropdown-link flex items-center gap-2.5 p-2 rounded-xl hover:bg-white/10 text-gray-200 hover:text-white transition-colors">
-                                <i class="fas fa-box-open text-indigo-400 w-4 text-center"></i>
-                                <span>Módulo de Compras</span>
+                        </div>
+                        <div class="pt-3 mt-3 border-t border-white/10 flex items-center justify-between px-2">
+                            <a href="#tienda-online" class="text-xs text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1.5 transition-colors">
+                                <i class="fas fa-store" aria-hidden="true"></i> Tienda Online Gratis
                             </a>
-                            <a href="#proveedores" class="tpv-dropdown-link flex items-center gap-2.5 p-2 rounded-xl hover:bg-white/10 text-gray-200 hover:text-white transition-colors">
-                                <i class="fas fa-file-invoice text-indigo-400 w-4 text-center"></i>
-                                <span>Proveedores y Cuentas</span>
-                            </a>
-                            <a href="#sucursales" class="tpv-dropdown-link flex items-center gap-2.5 p-2 rounded-xl hover:bg-white/10 text-gray-200 hover:text-white transition-colors">
-                                <i class="fas fa-warehouse text-indigo-400 w-4 text-center"></i>
-                                <span>Múltiples Sucursales</span>
-                            </a>
-                            <a href="#rrhh" class="tpv-dropdown-link flex items-center gap-2.5 p-2 rounded-xl hover:bg-white/10 text-gray-200 hover:text-white transition-colors">
-                                <i class="fas fa-user-clock text-indigo-400 w-4 text-center"></i>
-                                <span>RRHH y Asistencia</span>
-                            </a>
-                            <a href="#logistica" class="tpv-dropdown-link flex items-center gap-2.5 p-2 rounded-xl hover:bg-white/10 text-gray-200 hover:text-white transition-colors">
-                                <i class="fas fa-route text-indigo-400 w-4 text-center"></i>
-                                <span>Logística y Flota</span>
-                            </a>
-                            <a href="#clientes" class="tpv-dropdown-link flex items-center gap-2.5 p-2 rounded-xl hover:bg-white/10 text-gray-200 hover:text-white transition-colors">
-                                <i class="fas fa-users text-indigo-400 w-4 text-center"></i>
-                                <span>Clientes y Cta. Cte.</span>
-                            </a>
-                            <a href="#presupuestos" class="tpv-dropdown-link flex items-center gap-2.5 p-2 rounded-xl hover:bg-white/10 text-gray-200 hover:text-white transition-colors">
-                                <i class="fas fa-file-pdf text-indigo-400 w-4 text-center"></i>
-                                <span>Presupuestos PDF</span>
-                            </a>
-                            <a href="#carta-qr" class="tpv-dropdown-link flex items-center gap-2.5 p-2 rounded-xl hover:bg-white/10 text-gray-200 hover:text-white transition-colors">
-                                <i class="fas fa-qrcode text-indigo-400 w-4 text-center"></i>
-                                <span>Carta QR y Reservas</span>
-                            </a>
-                            <a href="#mercadopago" class="tpv-dropdown-link flex items-center gap-2.5 p-2 rounded-xl hover:bg-white/10 text-gray-200 hover:text-white transition-colors">
-                                <i class="fas fa-mobile-alt text-[#009EE3] w-4 text-center"></i>
-                                <span>Mercado Pago Point/QR</span>
-                            </a>
-                            <a href="#tienda-online" class="tpv-dropdown-link flex items-center gap-2.5 p-2 rounded-xl hover:bg-white/10 text-emerald-300 hover:text-white transition-colors">
-                                <i class="fas fa-store text-emerald-400 w-4 text-center"></i>
-                                <span class="flex items-center gap-1.5">
-                                    <span>Tienda Online Gratis</span>
-                                    <span class="text-[9px] bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 px-1.5 py-0.5 rounded-full font-bold">Nuevo</span>
-                                </span>
-                            </a>
-                            <a href="#servicios-web" class="tpv-dropdown-link flex items-center gap-2.5 p-2 rounded-xl hover:bg-white/10 text-gray-200 hover:text-white transition-colors">
-                                <i class="fas fa-broadcast-tower text-indigo-400 w-4 text-center"></i>
-                                <span>Streaming & Hosting Web</span>
+                            <a href="#servicios-web" class="text-xs text-gray-400 hover:text-gray-200 flex items-center gap-1.5 transition-colors">
+                                <i class="fas fa-broadcast-tower" aria-hidden="true"></i> Streaming &amp; Web
                             </a>
                         </div>
                     </div>
@@ -694,22 +667,43 @@
                 <span class="flex items-center gap-2"><i class="fas fa-th-large text-indigo-400"></i> Módulos Traxionar TPV</span>
                 <i class="fas fa-chevron-down text-xs text-gray-400 transition-transform duration-300 group-open:rotate-180"></i>
             </summary>
-            <nav class="grid grid-cols-2 gap-x-4 gap-y-2.5 text-sm font-medium pt-4 mt-3 border-t border-white/10 text-left">
-                <a href="#ventas" class="mobile-link text-gray-300 hover:text-indigo-400 transition-colors">Punto de Venta</a>
-                <a href="#caja" class="mobile-link text-gray-300 hover:text-indigo-400 transition-colors">Caja y Cierre Z</a>
-                <a href="#productos" class="mobile-link text-gray-300 hover:text-indigo-400 transition-colors">Catálogo</a>
-                <a href="#lotes" class="mobile-link text-gray-300 hover:text-indigo-400 transition-colors">Vencimientos</a>
-                <a href="#compras" class="mobile-link text-gray-300 hover:text-indigo-400 transition-colors">Compras</a>
-                <a href="#proveedores" class="mobile-link text-gray-300 hover:text-indigo-400 transition-colors">Proveedores</a>
-                <a href="#sucursales" class="mobile-link text-gray-300 hover:text-indigo-400 transition-colors">Sucursales</a>
-                <a href="#rrhh" class="mobile-link text-gray-300 hover:text-indigo-400 transition-colors">RRHH</a>
-                <a href="#logistica" class="mobile-link text-gray-300 hover:text-indigo-400 transition-colors">Logística</a>
-                <a href="#clientes" class="mobile-link text-gray-300 hover:text-indigo-400 transition-colors">Clientes</a>
-                <a href="#presupuestos" class="mobile-link text-gray-300 hover:text-indigo-400 transition-colors">Presupuestos</a>
-                <a href="#carta-qr" class="mobile-link text-gray-300 hover:text-indigo-400 transition-colors">Carta QR</a>
-                <a href="#mercadopago" class="mobile-link text-gray-300 hover:text-[#009EE3] transition-colors">Mercado Pago</a>
-                <a href="#tienda-online" class="mobile-link text-emerald-400 font-semibold hover:text-emerald-300 transition-colors flex items-center gap-1"><i class="fas fa-store text-xs"></i> Tienda Online</a>
-                <a href="#servicios-web" class="mobile-link text-gray-300 hover:text-indigo-400 transition-colors">Web & Radio</a>
+            <nav class="grid grid-cols-1 gap-2 text-sm font-medium pt-4 mt-3 border-t border-white/10 text-left">
+                <a href="#traxionar-tpv" onclick="switchTpvView('ventas')" class="mobile-link flex items-center gap-2.5 text-gray-300 hover:text-indigo-400 transition-colors p-2 rounded-xl hover:bg-white/5">
+                    <i class="fas fa-cash-register text-indigo-400 w-4 text-center"></i>
+                    <div>
+                        <div class="font-bold text-white text-xs">Ventas, Caja &amp; AFIP</div>
+                        <div class="text-[10px] text-gray-400">TPV, MP y Presupuestos</div>
+                    </div>
+                </a>
+                <a href="#traxionar-tpv" onclick="switchTpvView('stock')" class="mobile-link flex items-center gap-2.5 text-gray-300 hover:text-indigo-400 transition-colors p-2 rounded-xl hover:bg-white/5">
+                    <i class="fas fa-boxes text-indigo-400 w-4 text-center"></i>
+                    <div>
+                        <div class="font-bold text-white text-xs">Stock, Lotes &amp; Compras</div>
+                        <div class="text-[10px] text-gray-400">Kardex, Lotes PEPS y Prov.</div>
+                    </div>
+                </a>
+                <a href="#traxionar-tpv" onclick="switchTpvView('clientes')" class="mobile-link flex items-center gap-2.5 text-gray-300 hover:text-indigo-400 transition-colors p-2 rounded-xl hover:bg-white/5">
+                    <i class="fas fa-users text-indigo-400 w-4 text-center"></i>
+                    <div>
+                        <div class="font-bold text-white text-xs">Clientes, Fiado &amp; RRHH</div>
+                        <div class="text-[10px] text-gray-400">Cuentas Corrientes y PIN</div>
+                    </div>
+                </a>
+                <a href="#traxionar-tpv" onclick="switchTpvView('sucursales')" class="mobile-link flex items-center gap-2.5 text-gray-300 hover:text-indigo-400 transition-colors p-2 rounded-xl hover:bg-white/5">
+                    <i class="fas fa-warehouse text-indigo-400 w-4 text-center"></i>
+                    <div>
+                        <div class="font-bold text-white text-xs">Multi-Sucursal &amp; Salón</div>
+                        <div class="text-[10px] text-gray-400">Flota, Envíos y Carta QR</div>
+                    </div>
+                </a>
+                <div class="border-t border-white/10 pt-2.5 mt-1 flex items-center justify-between px-1">
+                    <a href="#tienda-online" class="mobile-link text-emerald-400 font-semibold hover:text-emerald-300 transition-colors flex items-center gap-1.5 text-xs">
+                        <i class="fas fa-store"></i> Tienda Online Gratis
+                    </a>
+                    <a href="#servicios-web" class="mobile-link text-gray-400 hover:text-gray-200 transition-colors flex items-center gap-1.5 text-xs">
+                        <i class="fas fa-broadcast-tower"></i> Web &amp; Radio
+                    </a>
+                </div>
             </nav>
         </details>
 
@@ -781,7 +775,7 @@
                     Software ágil en la nube con <strong class="text-white font-semibold">facturación electrónica AFIP</strong>, <strong class="text-emerald-400 font-semibold">tienda online gratis con dominio propio</strong>, control de stock, caja rápida y Mercado Pago para comercios minoristas y mayoristas. Potenciado por <strong class="text-indigo-400 font-semibold">TRAXIONAR</strong>.
                 </p>
                 <div class="flex flex-wrap justify-center gap-3 sm:gap-4 reveal delay-300">
-                    <a href="#ventas" class="bg-white text-black px-7 py-3.5 rounded-full font-medium hover:bg-gray-200 hover:scale-105 transition duration-300 shadow-lg text-sm sm:text-base">
+                    <a href="#traxionar-tpv" class="bg-white text-black px-7 py-3.5 rounded-full font-medium hover:bg-gray-200 hover:scale-105 transition duration-300 shadow-lg text-sm sm:text-base">
                         Descubrir Funciones TPV
                     </a>
                     <a href="#tienda-online" class="bg-gradient-to-r from-emerald-600 to-teal-600 text-white border border-emerald-400/40 backdrop-blur-md px-7 py-3.5 rounded-full font-medium hover:from-emerald-500 hover:to-teal-500 hover:scale-105 transition duration-300 shadow-[0_0_20px_rgba(16,185,129,0.35)] text-sm sm:text-base">
@@ -818,411 +812,236 @@
                 
                 <!-- Scroll indicator -->
                 <div class="absolute bottom-10 animate-bounce cursor-pointer opacity-70 hover:opacity-100 transition-opacity">
-                    <a href="#ventas" aria-label="Desplazarse hacia abajo"><i class="fas fa-chevron-down text-white text-3xl"></i></a>
+                    <a href="#traxionar-tpv" aria-label="Desplazarse hacia abajo"><i class="fas fa-chevron-down text-white text-3xl"></i></a>
                 </div>
             </div>
         </section>
 
-        <!-- Section 2: Punto de Venta -->
-        <section id="ventas" class="snap-section" style="background-image: url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1920&q=80'); background-position: center;">
+        <!-- Section 2: Traxionar TPV Multi-Sucursal (Suite Unificada de 13 Módulos) -->
+        <section id="traxionar-tpv" class="snap-section" style="background-image: url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1920&q=80'); background-position: center;">
             <div class="overlay-center"></div>
-            <div class="relative content-z flex flex-col items-center justify-center px-4 w-full h-full py-16">
-                <div class="text-center mb-6 md:mb-10 max-w-4xl mt-12">
-                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-3 tracking-tight drop-shadow-lg reveal">
-                        Punto de Venta (TPV) Ágil para Comercios
-                    </h2>
-                    <p class="text-base md:text-xl text-gray-200 font-light drop-shadow-md reveal delay-100">
-                        Desarrollado para simplificar la atención al cliente y el control de caja en el día a día.
-                    </p>
-                </div>
-                
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full max-w-7xl px-4 reveal delay-200">
-                    <div class="glass-card p-5 md:p-6 rounded-2xl">
-                        <i class="fas fa-barcode text-2xl text-indigo-400 mb-3"></i>
-                        <h3 class="text-lg font-semibold mb-2">Carga Veloz</h3>
-                        <p class="text-gray-400 text-xs md:text-sm leading-relaxed">Busque productos de forma instantánea a través del lector de códigos de barras o con el buscador inteligente predictivo.</p>
-                    </div>
-                    <div class="glass-card p-5 md:p-6 rounded-2xl">
-                        <i class="fas fa-wallet text-2xl text-indigo-400 mb-3"></i>
-                        <h3 class="text-lg font-semibold mb-2">Cobros Flexibles</h3>
-                        <p class="text-gray-400 text-xs md:text-sm leading-relaxed">Administre pagos en efectivo, transferencias, tarjetas, cuentas corrientes con cuotas o combinaciones de medios mixtos.</p>
-                    </div>
-                    <div class="glass-card p-5 md:p-6 rounded-2xl">
-                        <i class="fas fa-file-invoice-dollar text-2xl text-indigo-400 mb-3"></i>
-                        <h3 class="text-lg font-semibold mb-2">Facturación y AFIP</h3>
-                        <p class="text-gray-400 text-xs md:text-sm leading-relaxed">Emita tickets adaptados a impresoras térmicas de 58mm y 88mm, con la posibilidad de integrar la facturación electrónica de AFIP.</p>
-                    </div>
-                    <div class="glass-card p-5 md:p-6 rounded-2xl">
-                        <i class="fas fa-wifi text-2xl text-indigo-400 mb-3"></i>
-                        <h3 class="text-lg font-semibold mb-2">Sin Interrupciones</h3>
-                        <p class="text-gray-400 text-xs md:text-sm leading-relaxed">Soporte para registrar transacciones de manera local, sincronizando los datos automáticamente al recuperar la conexión a internet.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+            
+            <!-- Anclas invisibles para compatibilidad con enlaces directos -->
+            <span id="ventas" class="sr-only"></span>
+            <span id="caja" class="sr-only"></span>
+            <span id="productos" class="sr-only"></span>
+            <span id="lotes" class="sr-only"></span>
+            <span id="compras" class="sr-only"></span>
+            <span id="proveedores" class="sr-only"></span>
+            <span id="rrhh" class="sr-only"></span>
+            <span id="logistica" class="sr-only"></span>
+            <span id="clientes" class="sr-only"></span>
+            <span id="sucursales" class="sr-only"></span>
+            <span id="presupuestos" class="sr-only"></span>
+            <span id="carta-qr" class="sr-only"></span>
+            <span id="mercadopago" class="sr-only"></span>
 
-        <!-- Section 3: Caja y Transacciones -->
-        <section id="caja" class="snap-section" style="background-image: url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1920&q=80'); background-position: center;">
-            <div class="overlay-center"></div>
-            <div class="relative content-z flex flex-col items-center justify-center px-4 w-full h-full py-16">
-                <div class="text-center mb-8 md:mb-12 max-w-4xl">
-                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-4 tracking-tight drop-shadow-lg reveal">
-                        Control de Caja, Medios de Pago y Cierre Z
+            <div class="relative content-z flex flex-col items-center justify-center px-4 w-full h-full py-16 md:py-20">
+                <div class="text-center mb-5 max-w-4xl">
+                    <div class="inline-flex items-center gap-2 mb-2 px-3.5 py-1 rounded-full bg-indigo-500/20 border border-indigo-500/40 text-indigo-300 text-xs font-bold uppercase tracking-widest reveal">
+                        <img src="logotraxionar.png" alt="Logo Traxionar" class="h-4 w-auto object-contain">
+                        <span>Plataforma Principal • Traxionar TPV Multi-Sucursal</span>
+                    </div>
+                    <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-2 tracking-tight drop-shadow-lg reveal delay-100">
+                        Traxionar TPV — Sistema Integral de Gestión Comercial
                     </h2>
-                    <p class="text-base md:text-xl text-gray-200 font-light drop-shadow-md reveal delay-100">
-                        Transparencia y monitoreo integral de los flujos de dinero.
+                    <p class="text-xs sm:text-sm md:text-base text-gray-200 font-light drop-shadow max-w-3xl mx-auto reveal delay-100">
+                        La suite comercial más completa: 13 módulos operativos en una sola plataforma en la nube para ventas ágiles, facturación AFIP, control de inventario, finanzas, multi-sucursal y gastronomía.
                     </p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl px-4 reveal delay-200">
-                    <div class="glass-card p-6 md:p-8 rounded-2xl">
-                        <i class="fas fa-user-tie text-3xl text-indigo-400 mb-4"></i>
-                        <h3 class="text-xl font-semibold mb-2">Arqueo por cajero</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">Monitoreo diario e independiente del efectivo en mano y de las operaciones realizadas por cada empleado.</p>
-                    </div>
-                    <div class="glass-card p-6 md:p-8 rounded-2xl">
-                        <i class="fas fa-chart-pie text-3xl text-indigo-400 mb-4"></i>
-                        <h3 class="text-xl font-semibold mb-2">Estadísticas y Cierre Z</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">Reportes filtrados por fechas, ventas por categoría de producto, cálculo de comisiones y cierre de caja diario independiente por cada sucursal, para resguardar la transparencia.</p>
-                    </div>
-                    <div class="glass-card p-6 md:p-8 rounded-2xl">
-                        <i class="fas fa-satellite-dish text-3xl text-indigo-400 mb-4"></i>
-                        <h3 class="text-xl font-semibold mb-2">Sincronización en Tiempo Real</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">Todas las terminales del negocio se actualizan al instante entre sí, aunque estén en dispositivos o pestañas distintas.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Section 4: Gestión de Productos (Catálogo) -->
-        <section id="productos" class="snap-section" style="background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1920&q=80'); background-position: center;">
-            <div class="overlay-side"></div>
-            <div class="relative content-z flex flex-col justify-center items-start px-6 md:px-12 lg:px-24 max-w-7xl mx-auto w-full h-full py-16">
-                <div class="max-w-4xl">
-                    <p class="text-indigo-400 font-semibold tracking-widest uppercase mb-2 text-sm reveal">Inventario Inteligente</p>
-                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight reveal delay-100">
-                        Control de Stock, Inventario y Catálogo de Productos
-                    </h2>
-                    <p class="text-base md:text-lg text-gray-300 mb-8 font-light reveal delay-200">
-                        Un panel completo para registrar y clasificar sus artículos, controlar las existencias físicas y estructurar su política de precios con precisión.
-                    </p>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 w-full reveal delay-300">
-                        <div class="glass-card p-5 rounded-2xl">
-                            <i class="fas fa-list-alt text-xl text-indigo-400 mb-2"></i>
-                            <h3 class="text-base font-semibold mb-1">Fichas Completas</h3>
-                            <p class="text-gray-400 text-xs leading-relaxed">Almacene códigos de barras, proveedor, fotos comprimidas, categorías y ubicaciones en depósito.</p>
+                <!-- Selector de Pilares Operativos Traxionar TPV (4 Pestañas) -->
+                <div class="inline-flex flex-wrap justify-center p-1.5 rounded-2xl bg-black/70 backdrop-blur-xl border border-white/20 mb-5 shadow-2xl reveal delay-200 z-20 gap-1">
+                    <button id="tpv-tab-ventas-btn" onclick="switchTpvView('ventas')" type="button" aria-label="Ver módulos de Ventas y Caja" class="px-4 py-2 rounded-xl font-bold text-xs sm:text-sm transition-all duration-300 flex items-center gap-2 bg-gradient-to-r from-indigo-600 to-indigo-500 text-white shadow-lg shadow-indigo-500/30">
+                        <i class="fas fa-cash-register"></i>
+                        <span>Ventas &amp; Caja</span>
+                    </button>
+                    <button id="tpv-tab-stock-btn" onclick="switchTpvView('stock')" type="button" aria-label="Ver módulos de Stock y Compras" class="px-4 py-2 rounded-xl font-semibold text-xs sm:text-sm transition-all duration-300 flex items-center gap-2 text-gray-300 hover:text-white hover:bg-white/10">
+                        <i class="fas fa-boxes text-indigo-400"></i>
+                        <span>Stock &amp; Compras</span>
+                    </button>
+                    <button id="tpv-tab-clientes-btn" onclick="switchTpvView('clientes')" type="button" aria-label="Ver módulos de Clientes y RRHH" class="px-4 py-2 rounded-xl font-semibold text-xs sm:text-sm transition-all duration-300 flex items-center gap-2 text-gray-300 hover:text-white hover:bg-white/10">
+                        <i class="fas fa-users text-indigo-400"></i>
+                        <span>Clientes &amp; RRHH</span>
+                    </button>
+                    <button id="tpv-tab-sucursales-btn" onclick="switchTpvView('sucursales')" type="button" aria-label="Ver módulos de Sucursales y Salón" class="px-4 py-2 rounded-xl font-semibold text-xs sm:text-sm transition-all duration-300 flex items-center gap-2 text-gray-300 hover:text-white hover:bg-white/10">
+                        <i class="fas fa-warehouse text-indigo-400"></i>
+                        <span>Sucursales &amp; Salón</span>
+                    </button>
+                </div>
+
+                <!-- CONTENIDO PESTAÑA 1: VENTAS & CAJA -->
+                <div id="tpv-view-ventas" class="w-full max-w-7xl px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 reveal delay-300">
+                    <div class="glass-card p-5 rounded-2xl border-t-2 border-indigo-500/60">
+                        <div class="flex items-center justify-between mb-3">
+                            <i class="fas fa-cash-register text-2xl text-indigo-400"></i>
+                            <span class="text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 font-bold">Mostrador</span>
                         </div>
-                        <div class="glass-card p-5 rounded-2xl">
-                            <i class="fas fa-object-group text-xl text-indigo-400 mb-2"></i>
-                            <h3 class="text-base font-semibold mb-1">Kits y Compuestos</h3>
-                            <p class="text-gray-400 text-xs leading-relaxed">Configure combos que requieran receta. El sistema calcula el costo y descuenta stock de insumos al vender.</p>
+                        <h3 class="text-base font-bold text-white mb-1.5">Punto de Venta Ágil &amp; Offline</h3>
+                        <p class="text-gray-400 text-xs leading-relaxed">Carga ultrarrápida con lector de código de barras o buscador predictivo. Emite tickets de 58 y 88mm con AFIP y sigue operando sin internet sincronizando al reconectar.</p>
+                    </div>
+
+                    <div class="glass-card p-5 rounded-2xl border-t-2 border-indigo-500/60">
+                        <div class="flex items-center justify-between mb-3">
+                            <i class="fas fa-chart-pie text-2xl text-indigo-400"></i>
+                            <span class="text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 font-bold">Cierre Z</span>
                         </div>
-                        <div class="glass-card p-5 rounded-2xl">
-                            <i class="fas fa-file-excel text-xl text-indigo-400 mb-2"></i>
-                            <h3 class="text-base font-semibold mb-1">Importación y PDF</h3>
-                            <p class="text-gray-400 text-xs leading-relaxed">Cargue listas masivamente mediante Excel, y genere catálogos listos para descargar e imprimir en PDF.</p>
+                        <h3 class="text-base font-bold text-white mb-1.5">Control de Caja &amp; Arqueos</h3>
+                        <p class="text-gray-400 text-xs leading-relaxed">Arqueo diario independiente por cajero y por turno. Cierre Z por sucursal, control estricto de efectivo en mano, transferencias y sincronización entre terminales.</p>
+                    </div>
+
+                    <div class="glass-card p-5 rounded-2xl border-t-2 border-[#009EE3]/70">
+                        <div class="flex items-center justify-between mb-3">
+                            <i class="fas fa-mobile-alt text-2xl text-[#009EE3]"></i>
+                            <span class="text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full bg-[#009EE3]/20 text-[#009EE3] font-bold">Mercado Pago</span>
                         </div>
+                        <h3 class="text-base font-bold text-white mb-1.5">QR Dinámico &amp; Point Smart</h3>
+                        <p class="text-gray-400 text-xs leading-relaxed">Cobro con QR por importe exacto en pantalla y envío automático a terminales Point Smart sin tipear montos a mano. Conciliación y acreditación inmediata en caja.</p>
                     </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Section 5: Detalle de Productos y Vencimientos -->
-        <section id="lotes" class="snap-section" style="background-image: url('https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=1920&q=80'); background-position: center;">
-            <div class="absolute inset-0 bg-gradient-to-l from-black/95 via-black/70 to-transparent z-1"></div>
-            <div class="relative content-z flex flex-col justify-center items-end px-6 md:px-24 text-right max-w-7xl mx-auto w-full h-full py-16">
-                <div class="max-w-xl mt-10">
-                    <p class="text-indigo-400 font-semibold tracking-widest uppercase mb-3 text-sm reveal">Trazabilidad</p>
-                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight reveal delay-100">
-                        Control de Lotes, Vencimientos y Trazabilidad PEPS
-                    </h2>
-                    <p class="text-base md:text-lg text-gray-300 mb-8 font-light ml-auto reveal delay-200">
-                        Realice un seguimiento del stock perecedero asociando fechas de vencimiento a lotes específicos, lo que ayuda a planificar la rotación de la mercadería bajo el principio de que lo primero que vence es lo primero que debe salir.
-                    </p>
-
-                    <div class="glass-card p-4 rounded-xl flex items-center gap-4 text-left border-l-4 border-l-orange-500 ml-auto max-w-md reveal delay-300">
-                        <i class="fas fa-exclamation-triangle text-orange-500 text-2xl"></i>
-                        <div>
-                            <h4 class="font-semibold text-white">Alerta de Rotación</h4>
-                            <p class="text-xs text-gray-400">Lote #4892 próximo a vencer según esquema PEPS.</p>
+                    <div class="glass-card p-5 rounded-2xl border-t-2 border-indigo-500/60">
+                        <div class="flex items-center justify-between mb-3">
+                            <i class="fas fa-file-pdf text-2xl text-indigo-400"></i>
+                            <span class="text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 font-bold">Cotizaciones</span>
                         </div>
+                        <h3 class="text-base font-bold text-white mb-1.5">Presupuestos PDF en 1 Clic</h3>
+                        <p class="text-gray-400 text-xs leading-relaxed">Cotizaciones comerciales con señas y descuentos listas para enviar por WhatsApp o email. Al ser aceptadas, se convierten en venta final sin recargar datos.</p>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <!-- Section 6: Registro de Compras -->
-        <section id="compras" class="snap-section" style="background-image: url('https://images.unsplash.com/photo-1580674285054-bed31e145f59?auto=format&fit=crop&w=1920&q=80'); background-position: center;">
-            <div class="overlay-center"></div>
-            <div class="relative content-z flex flex-col justify-center items-center px-4 text-center w-full h-full py-16">
-                <div class="max-w-4xl mb-6 md:mb-10 mt-12">
-                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-4 tracking-tight reveal">Gestión de Compras y Control de Proveedores</h2>
-                    <p class="text-base md:text-lg text-gray-300 font-light reveal delay-100">
-                        Un espacio estructurado para documentar el ingreso de mercadería, regular los costos de reposición y mantener el inventario siempre al día.
-                    </p>
-                </div>
-                
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full max-w-7xl px-4 reveal delay-200">
-                    <div class="glass-card p-5 md:p-6 rounded-2xl text-left">
-                        <i class="fas fa-box-open text-2xl text-indigo-400 mb-3"></i>
-                        <h3 class="text-lg font-semibold mb-2">Ingreso Automático</h3>
-                        <p class="text-gray-400 text-xs md:text-sm leading-relaxed">Registre la llegada de mercadería y sume unidades al inventario de forma inmediata, evitando discrepancias físicas.</p>
-                    </div>
-                    <div class="glass-card p-5 md:p-6 rounded-2xl text-left">
-                        <i class="fas fa-coins text-2xl text-indigo-400 mb-3"></i>
-                        <h3 class="text-lg font-semibold mb-2">Costos Multimoneda</h3>
-                        <p class="text-gray-400 text-xs md:text-sm leading-relaxed">Gestione el costo en ARS y USD, aplicando la tasa de cambio configurada en el sistema de forma automática.</p>
-                    </div>
-                    <div class="glass-card p-5 md:p-6 rounded-2xl text-left">
-                        <i class="fas fa-tags text-2xl text-indigo-400 mb-3"></i>
-                        <h3 class="text-lg font-semibold mb-2">Precios Dinámicos</h3>
-                        <p class="text-gray-400 text-xs md:text-sm leading-relaxed">Recalcule y actualice los precios de venta automáticamente al registrar nuevos costos de compra.</p>
-                    </div>
-                    <div class="glass-card p-5 md:p-6 rounded-2xl text-left">
-                        <i class="fas fa-hand-holding-dollar text-2xl text-indigo-400 mb-3"></i>
-                        <h3 class="text-lg font-semibold mb-2">Financiación</h3>
-                        <p class="text-gray-400 text-xs md:text-sm leading-relaxed">Registre compras al contado o a crédito, actualizando en tiempo real el saldo pendiente en la cuenta del proveedor.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 7: Proveedores y Cuentas -->
-        <section id="proveedores" class="snap-section" style="background-image: url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1920&q=80'); background-position: center;">
-            <div class="overlay-side"></div>
-            <div class="relative content-z flex flex-col justify-center items-start px-6 md:px-12 lg:px-24 max-w-7xl mx-auto w-full h-full py-16">
-                <div class="max-w-4xl">
-                    <p class="text-indigo-400 font-semibold tracking-widest uppercase mb-2 text-sm reveal">Relaciones Comerciales</p>
-                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight reveal delay-100">
-                        Proveedores y Cuentas Corrientes Comerciales
-                    </h2>
-                    <p class="text-base md:text-lg text-gray-300 mb-8 font-light reveal delay-200">
-                        Mantenga un registro preciso de sus socios comerciales y tenga un control absoluto sobre las obligaciones de pago de su empresa.
-                    </p>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-3xl reveal delay-300">
-                        <div class="glass-card p-6 md:p-8 rounded-2xl">
-                            <i class="fas fa-address-book text-3xl text-indigo-400 mb-4"></i>
-                            <h3 class="text-xl font-semibold mb-2">Directorio Centralizado</h3>
-                            <p class="text-gray-400 text-sm leading-relaxed">Organización detallada de datos de contacto y fiscales de todos los proveedores que abastecen su negocio en un solo lugar.</p>
+                <!-- CONTENIDO PESTAÑA 2: STOCK & COMPRAS -->
+                <div id="tpv-view-stock" class="w-full max-w-7xl px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 hidden">
+                    <div class="glass-card p-5 rounded-2xl border-t-2 border-indigo-500/60">
+                        <div class="flex items-center justify-between mb-3">
+                            <i class="fas fa-boxes text-2xl text-indigo-400"></i>
+                            <span class="text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 font-bold">Inventario</span>
                         </div>
-                        <div class="glass-card p-6 md:p-8 rounded-2xl">
-                            <i class="fas fa-file-invoice text-3xl text-indigo-400 mb-4"></i>
-                            <h3 class="text-xl font-semibold mb-2">Cuentas a Pagar</h3>
-                            <p class="text-gray-400 text-sm leading-relaxed">Registro ordenado de deudas generadas por compras a crédito y documentación de los pagos realizados para reducir saldos pendientes de forma transparente.</p>
+                        <h3 class="text-base font-bold text-white mb-1.5">Catálogo Central &amp; Excel</h3>
+                        <p class="text-gray-400 text-xs leading-relaxed">Fichas con fotos comprimidas, código de barras, ubicación en estantería e importación masiva en Excel. Genera catálogos mayoristas descargables en PDF.</p>
+                    </div>
+
+                    <div class="glass-card p-5 rounded-2xl border-t-2 border-indigo-500/60">
+                        <div class="flex items-center justify-between mb-3">
+                            <i class="fas fa-object-group text-2xl text-indigo-400"></i>
+                            <span class="text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 font-bold">Recetas</span>
                         </div>
+                        <h3 class="text-base font-bold text-white mb-1.5">Kits &amp; Combos Compuestos</h3>
+                        <p class="text-gray-400 text-xs leading-relaxed">Configuración de artículos combinados con cálculo automático de costo de insumos. Al vender el combo, se descuenta de forma proporcional el stock de cada parte.</p>
                     </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Section 8: RRHH y Asistencia -->
-        <section id="rrhh" class="snap-section" style="background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1920&q=80'); background-position: center;">
-            <div class="overlay-center"></div>
-            <div class="relative content-z flex flex-col items-center justify-center px-4 w-full h-full py-16">
-                <div class="text-center mb-8 md:mb-12 max-w-4xl">
-                    <p class="text-indigo-400 font-semibold tracking-widest uppercase mb-2 text-sm reveal">Gestión de Personal</p>
-                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-4 tracking-tight drop-shadow-lg reveal delay-100">
-                        Control de Personal, RRHH y Turnos de Trabajo
-                    </h2>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl px-4 reveal delay-200">
-                    <div class="glass-card p-6 md:p-8 rounded-2xl text-center">
-                        <i class="fas fa-user-clock text-4xl text-indigo-400 mb-4"></i>
-                        <h3 class="text-xl font-semibold mb-2">Fichas de Entrada y Salida</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">Control de asistencia para el personal del comercio mediante pines de seguridad, de forma completamente independiente de las operaciones de venta.</p>
-                    </div>
-                    <div class="glass-card p-6 md:p-8 rounded-2xl text-center">
-                        <i class="fas fa-money-check-alt text-4xl text-indigo-400 mb-4"></i>
-                        <h3 class="text-xl font-semibold mb-2">Cálculo de Horas y Pago</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">Reporte de horas acumuladas por empleado en un rango de fechas y posibilidad de registrar el pago de sueldos como un gasto de caja directo.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 9: Logística -->
-        <section id="logistica" class="snap-section" style="background-image: url('https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=1920&q=80'); background-position: center;">
-            <div class="absolute inset-0 bg-gradient-to-l from-black/95 via-black/70 to-transparent z-1"></div>
-            <div class="relative content-z flex flex-col justify-center items-end px-6 md:px-24 text-right max-w-7xl mx-auto w-full h-full py-16">
-                <div class="max-w-3xl mt-10">
-                    <p class="text-indigo-400 font-semibold tracking-widest uppercase mb-3 text-sm reveal">Distribución</p>
-                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight reveal delay-100">
-                        Logística, Envíos y Flota de Vehículos
-                    </h2>
-                    
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full reveal delay-200">
-                        <div class="glass-card p-6 rounded-2xl text-left border-t-2 border-indigo-500">
-                            <i class="fas fa-route text-2xl text-indigo-400 mb-3"></i>
-                            <h3 class="text-lg font-semibold mb-2 text-white">Hojas de Ruta</h3>
-                            <p class="text-gray-400 text-sm leading-relaxed">Vinculación de pedidos a vehículos específicos para organizar las entregas, controlar los estados de recepción de los paquetes y facilitar las cobranzas en la calle.</p>
+                    <div class="glass-card p-5 rounded-2xl border-t-2 border-amber-500/70">
+                        <div class="flex items-center justify-between mb-3">
+                            <i class="fas fa-calendar-times text-2xl text-amber-400"></i>
+                            <span class="text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 font-bold">Trazabilidad</span>
                         </div>
-                        <div class="glass-card p-6 rounded-2xl text-left border-t-2 border-indigo-500">
-                            <i class="fas fa-truck-wrench text-2xl text-indigo-400 mb-3"></i>
-                            <h3 class="text-lg font-semibold mb-2 text-white">Mantenimiento de Flota</h3>
-                            <p class="text-gray-400 text-sm leading-relaxed">Registro del kilometraje, historial de gastos de combustible y recordatorios automatizados de servicios preventivos (filtros y cambios de aceite) por cada unidad.</p>
+                        <h3 class="text-base font-bold text-white mb-1.5">Lotes, Vencimientos &amp; PEPS</h3>
+                        <p class="text-gray-400 text-xs leading-relaxed">Control riguroso de mercadería perecedera. Esquema PEPS (Primero que Entra, Primero que Sale) con alertas visuales de rotación para evitar pérdidas por vencimiento.</p>
+                    </div>
+
+                    <div class="glass-card p-5 rounded-2xl border-t-2 border-indigo-500/60">
+                        <div class="flex items-center justify-between mb-3">
+                            <i class="fas fa-truck-loading text-2xl text-indigo-400"></i>
+                            <span class="text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 font-bold">Proveedores</span>
                         </div>
+                        <h3 class="text-base font-bold text-white mb-1.5">Compras &amp; Costos Multimoneda</h3>
+                        <p class="text-gray-400 text-xs leading-relaxed">Ingreso de compras en ARS/USD con actualización automática de existencias y precios de venta. Libro de cuentas corrientes comerciales a pagar a proveedores.</p>
                     </div>
+                </div>
+
+                <!-- CONTENIDO PESTAÑA 3: CLIENTES & RRHH -->
+                <div id="tpv-view-clientes" class="w-full max-w-7xl px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 hidden">
+                    <div class="glass-card p-5 rounded-2xl border-t-2 border-indigo-500/60">
+                        <div class="flex items-center justify-between mb-3">
+                            <i class="fas fa-users text-2xl text-indigo-400"></i>
+                            <span class="text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 font-bold">Fiado</span>
+                        </div>
+                        <h3 class="text-base font-bold text-white mb-1.5">Cuentas Corrientes (Fiado)</h3>
+                        <p class="text-gray-400 text-xs leading-relaxed">Ficha del cliente con CUIT/DNI, límites de crédito personalizados para compras fiadas y monitoreo en tiempo real de saldos activos, deudas y estado de mora.</p>
+                    </div>
+
+                    <div class="glass-card p-5 rounded-2xl border-t-2 border-indigo-500/60">
+                        <div class="flex items-center justify-between mb-3">
+                            <i class="fas fa-hand-holding-dollar text-2xl text-indigo-400"></i>
+                            <span class="text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 font-bold">Cobranzas</span>
+                        </div>
+                        <h3 class="text-base font-bold text-white mb-1.5">Abonos &amp; Recibos de Pago</h3>
+                        <p class="text-gray-400 text-xs leading-relaxed">Registro ágil de pagos parciales o totales de clientes con emisión inmediata de comprobantes y recibos de cobro, actualizando automáticamente el arqueo de caja.</p>
+                    </div>
+
+                    <div class="glass-card p-5 rounded-2xl border-t-2 border-indigo-500/60">
+                        <div class="flex items-center justify-between mb-3">
+                            <i class="fas fa-user-clock text-2xl text-indigo-400"></i>
+                            <span class="text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 font-bold">Personal</span>
+                        </div>
+                        <h3 class="text-base font-bold text-white mb-1.5">Fichadas de Asistencia con PIN</h3>
+                        <p class="text-gray-400 text-xs leading-relaxed">Control de entrada y salida de empleados mediante PIN seguro en terminal, totalmente aislado de la pantalla de cobros para resguardar la privacidad del negocio.</p>
+                    </div>
+
+                    <div class="glass-card p-5 rounded-2xl border-t-2 border-indigo-500/60">
+                        <div class="flex items-center justify-between mb-3">
+                            <i class="fas fa-money-check-alt text-2xl text-indigo-400"></i>
+                            <span class="text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 font-bold">Liquidación</span>
+                        </div>
+                        <h3 class="text-base font-bold text-white mb-1.5">Cálculo de Horas &amp; Sueldos</h3>
+                        <p class="text-gray-400 text-xs leading-relaxed">Reporte automático de horas acumuladas por empleado por período de fechas, con registro directo del pago de salarios o anticipos como egreso de caja.</p>
+                    </div>
+                </div>
+
+                <!-- CONTENIDO PESTAÑA 4: SUCURSALES & SALÓN -->
+                <div id="tpv-view-sucursales" class="w-full max-w-7xl px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 hidden">
+                    <div class="glass-card p-5 rounded-2xl border-t-2 border-indigo-500/60">
+                        <div class="flex items-center justify-between mb-3">
+                            <i class="fas fa-warehouse text-2xl text-indigo-400"></i>
+                            <span class="text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 font-bold">Red Locales</span>
+                        </div>
+                        <h3 class="text-base font-bold text-white mb-1.5">Multi-Sucursal Centralizada</h3>
+                        <p class="text-gray-400 text-xs leading-relaxed">Cada sucursal opera de forma independiente (stock y caja propios) con visión global en tiempo real. Cambio instantáneo de local activo en 1 clic desde cualquier terminal.</p>
+                    </div>
+
+                    <div class="glass-card p-5 rounded-2xl border-t-2 border-indigo-500/60">
+                        <div class="flex items-center justify-between mb-3">
+                            <i class="fas fa-exchange-alt text-2xl text-indigo-400"></i>
+                            <span class="text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 font-bold">Depósitos</span>
+                        </div>
+                        <h3 class="text-base font-bold text-white mb-1.5">Traspasos de Mercadería</h3>
+                        <p class="text-gray-400 text-xs leading-relaxed">Envío y recepción de stock entre depósitos y sucursales con remito digital, manteniendo el inventario auditado y evitando desabastecimiento de artículos.</p>
+                    </div>
+
+                    <div class="glass-card p-5 rounded-2xl border-t-2 border-indigo-500/60">
+                        <div class="flex items-center justify-between mb-3">
+                            <i class="fas fa-route text-2xl text-indigo-400"></i>
+                            <span class="text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 font-bold">Envíos</span>
+                        </div>
+                        <h3 class="text-base font-bold text-white mb-1.5">Logística, Hojas de Ruta &amp; Flota</h3>
+                        <p class="text-gray-400 text-xs leading-relaxed">Asignación de pedidos a vehículos de reparto, control de cobranzas en calle, historial de combustible y recordatorios automáticos de mantenimiento preventivo.</p>
+                    </div>
+
+                    <div class="glass-card p-5 rounded-2xl border-t-2 border-indigo-500/60">
+                        <div class="flex items-center justify-between mb-3">
+                            <i class="fas fa-utensils text-2xl text-indigo-400"></i>
+                            <span class="text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 font-bold">Gastronomía</span>
+                        </div>
+                        <h3 class="text-base font-bold text-white mb-1.5">Carta QR, Mesas &amp; Comandas</h3>
+                        <p class="text-gray-400 text-xs leading-relaxed">Menú digital interactivo por QR para comensales en mesa, comanderas en cocina y cobro inmediato en TPV. Panel de reservas y mapa visual del salón.</p>
+                    </div>
+                </div>
+
+                <!-- Botones de Acción TPV -->
+                <div class="mt-6 flex flex-wrap items-center justify-center gap-3 sm:gap-4 reveal delay-300">
+                    <a href="https://wa.me/543436512434?text=Hola,%20quisiera%20solicitar%20una%20demostraci%C3%B3n%20gratuita%20en%20vivo%20de%20Traxionar%20TPV." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white px-7 py-3 rounded-full text-xs sm:text-sm font-bold transition duration-300 shadow-[0_0_20px_rgba(79,70,229,0.45)] hover:scale-105">
+                        <i class="fab fa-whatsapp text-emerald-400 text-base"></i> Solicitar Demo en Vivo
+                    </a>
+                    <a href="https://traxionar.com.ar/tpvs" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-white text-black hover:bg-gray-200 px-6 py-3 rounded-full text-xs sm:text-sm font-bold transition duration-300 hover:scale-105 shadow-md">
+                        <i class="fas fa-sign-in-alt"></i> Acceder al Sistema TPV
+                    </a>
+                    <a href="#planes" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white px-6 py-3 rounded-full text-xs sm:text-sm font-semibold transition duration-300 hover:scale-105">
+                        <i class="fas fa-tag text-indigo-400"></i> Ver Planes y Precios
+                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- Section 10: Clientes -->
-        <section id="clientes" class="snap-section" style="background-image: url('https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?auto=format&fit=crop&w=1920&q=80'); background-position: center;">
-            <div class="overlay-center"></div>
-            <div class="relative content-z flex flex-col items-center justify-center px-4 w-full h-full py-16">
-                <div class="text-center mb-8 md:mb-12 max-w-4xl">
-                    <p class="text-indigo-400 font-semibold tracking-widest uppercase mb-2 text-sm reveal">Fidelización</p>
-                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-4 tracking-tight drop-shadow-lg reveal delay-100">
-                        Gestión de Clientes y Cuentas Corrientes (Fiado)
-                    </h2>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl px-4 reveal delay-200">
-                    <div class="glass-card p-6 md:p-8 rounded-2xl">
-                        <i class="fas fa-users text-3xl text-indigo-400 mb-4"></i>
-                        <h3 class="text-xl font-semibold mb-2">Fichas de Contacto</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">Registro ordenado de datos personales, información fiscal (CUIT/DNI) e historial de communication de sus compradores frecuentes.</p>
-                    </div>
-                    <div class="glass-card p-6 md:p-8 rounded-2xl">
-                        <i class="fas fa-credit-card text-3xl text-indigo-400 mb-4"></i>
-                        <h3 class="text-xl font-semibold mb-2">Financiación bajo Control</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">Asignación de límites de crédito personalizados para compras a cuenta corriente, seguimiento de deudas activas e incobrables, e historial detallado de abonos.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Section 10.1: Multi-Sucursal -->
-        <section id="sucursales" class="snap-section" style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80'); background-position: center;">
-            <div class="overlay-center"></div>
-            <div class="relative content-z flex flex-col items-center justify-center px-4 w-full h-full py-16">
-                <div class="text-center mb-8 md:mb-12 max-w-4xl">
-                    <p class="text-indigo-400 font-semibold tracking-widest uppercase mb-2 text-sm reveal">Escalabilidad</p>
-                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-4 tracking-tight drop-shadow-lg reveal delay-100">
-                        Gestión Multi-Sucursal en Tiempo Real
-                    </h2>
-                    <p class="text-base md:text-xl text-gray-200 font-light drop-shadow-md reveal delay-200 max-w-2xl mx-auto">
-                        Haga crecer su negocio a varios locales sin perder el control: cada sucursal opera de forma independiente, pero todo se ve desde un mismo sistema.
-                    </p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl px-4 reveal delay-300">
-                    <div class="glass-card p-6 md:p-8 rounded-2xl text-center">
-                        <i class="fas fa-warehouse text-3xl text-indigo-400 mb-4"></i>
-                        <h3 class="text-lg font-semibold mb-2">Stock Independiente</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">Cada sucursal maneja su propio inventario, con traspasos y unificación de stock entre depósitos cuando hace falta corregir o redistribuir mercadería.</p>
-                    </div>
-                    <div class="glass-card p-6 md:p-8 rounded-2xl text-center">
-                        <i class="fas fa-cash-register text-3xl text-indigo-400 mb-4"></i>
-                        <h3 class="text-lg font-semibold mb-2">Caja por Sucursal</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">El fondo de caja y el Cierre Z se calculan de forma independiente en cada local, sin mezclar el efectivo de una sucursal con el de otra.</p>
-                    </div>
-                    <div class="glass-card p-6 md:p-8 rounded-2xl text-center">
-                        <i class="fas fa-random text-3xl text-indigo-400 mb-4"></i>
-                        <h3 class="text-lg font-semibold mb-2">Cambio Instantáneo</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">Cualquier terminal puede cambiar de sucursal activa en un clic, ideal para dispositivos que se mueven entre locales.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 10.2: Presupuestos -->
-        <section id="presupuestos" class="snap-section" style="background-image: url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1920&q=80'); background-position: center;">
-            <div class="overlay-center"></div>
-            <div class="relative content-z flex flex-col items-center justify-center px-4 w-full h-full py-16">
-                <div class="text-center mb-8 md:mb-12 max-w-4xl">
-                    <p class="text-indigo-400 font-semibold tracking-widest uppercase mb-2 text-sm reveal">Ventas a Futuro</p>
-                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-4 tracking-tight drop-shadow-lg reveal delay-100">
-                        Presupuestos y Cotizaciones Profesionales en PDF
-                    </h2>
-                    <p class="text-base md:text-xl text-gray-200 font-light drop-shadow-md reveal delay-200 max-w-2xl mx-auto">
-                        Arme cotizaciones prolijas en minutos y conviértalas en una venta real apenas el cliente las acepta.
-                    </p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl px-4 reveal delay-300">
-                    <div class="glass-card p-6 md:p-8 rounded-2xl text-center">
-                        <i class="fas fa-file-pdf text-3xl text-indigo-400 mb-4"></i>
-                        <h3 class="text-lg font-semibold mb-2">PDF Listo para Enviar</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">Genere un presupuesto en PDF con el detalle de productos y servicios, listo para compartir por WhatsApp o correo electrónico.</p>
-                    </div>
-                    <div class="glass-card p-6 md:p-8 rounded-2xl text-center">
-                        <i class="fas fa-percentage text-3xl text-indigo-400 mb-4"></i>
-                        <h3 class="text-lg font-semibold mb-2">Señas y Descuentos</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">Aplique descuentos por ítem o generales, y calcule automáticamente el anticipo o seña solicitada al cliente.</p>
-                    </div>
-                    <div class="glass-card p-6 md:p-8 rounded-2xl text-center">
-                        <i class="fas fa-exchange-alt text-3xl text-indigo-400 mb-4"></i>
-                        <h3 class="text-lg font-semibold mb-2">Conversión a Venta</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">Cuando el cliente confirma, transforme el presupuesto directamente en una venta sin tener que volver a cargar los datos.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 10.3: Carta QR, Mesas y Reservas -->
-        <section id="carta-qr" class="snap-section" style="background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1920&q=80'); background-position: center;">
-            <div class="overlay-center"></div>
-            <div class="relative content-z flex flex-col items-center justify-center px-4 w-full h-full py-16">
-                <div class="text-center mb-8 md:mb-12 max-w-4xl">
-                    <p class="text-indigo-400 font-semibold tracking-widest uppercase mb-2 text-sm reveal">Experiencia Gastronómica</p>
-                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-4 tracking-tight drop-shadow-lg reveal delay-100">
-                        Carta Digital QR, Comandas y Reservas Gastronómicas
-                    </h2>
-                    <p class="text-base md:text-xl text-gray-200 font-light drop-shadow-md reveal delay-200 max-w-2xl mx-auto">
-                        Pensado para bares, restaurantes y locales gastronómicos que quieren agilizar la atención en el salón.
-                    </p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl px-4 reveal delay-300">
-                    <div class="glass-card p-6 md:p-8 rounded-2xl text-center">
-                        <i class="fas fa-qrcode text-3xl text-indigo-400 mb-4"></i>
-                        <h3 class="text-lg font-semibold mb-2">Menú QR por Mesa</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">Genere un código QR único por mesa para que cada cliente vea la carta pública y arme su pedido desde su propio celular.</p>
-                    </div>
-                    <div class="glass-card p-6 md:p-8 rounded-2xl text-center">
-                        <i class="fas fa-concierge-bell text-3xl text-indigo-400 mb-4"></i>
-                        <h3 class="text-lg font-semibold mb-2">Comandas en Vivo</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">Los pedidos de mesa llegan al instante a un tablero de cocina, y desde el TPV se cobran con un clic sin volver a cargar los ítems.</p>
-                    </div>
-                    <div class="glass-card p-6 md:p-8 rounded-2xl text-center">
-                        <i class="fas fa-calendar-check text-3xl text-indigo-400 mb-4"></i>
-                        <h3 class="text-lg font-semibold mb-2">Reservas Organizadas</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">Gestione la disponibilidad de mesas y visualice de un vistazo todas las reservas confirmadas para el día.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 10.4: Integracion Mercado Pago -->
-        <section id="mercadopago" class="snap-section" style="background-image: url('https://images.unsplash.com/photo-1556742111-a301076d9d18?auto=format&fit=crop&w=1920&q=80'); background-position: center;">
-            <div class="overlay-center"></div>
-            <div class="relative content-z flex flex-col items-center justify-center px-4 w-full h-full py-16">
-                <div class="text-center mb-8 md:mb-12 max-w-4xl">
-                    <p class="text-[#009EE3] font-semibold tracking-widest uppercase mb-2 text-sm reveal">Pagos Inteligentes</p>
-                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-4 tracking-tight drop-shadow-lg reveal delay-100">
-                        Cobros con Mercado Pago Point Smart y QR Dinámico
-                    </h2>
-                    <p class="text-base md:text-xl text-gray-200 font-light drop-shadow-md reveal delay-200 max-w-2xl mx-auto">
-                        Agilice su proceso de cobro vinculando directamente Traxionar con su cuenta de Mercado Pago para procesar pagos con código QR y terminales Point.
-                    </p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl px-4 reveal delay-300">
-                    <div class="glass-card p-6 md:p-8 rounded-2xl text-center border-b-4 border-[#009EE3]/40 hover:border-[#009EE3] hover:-translate-y-2 transition-all">
-                        <i class="fas fa-qrcode text-4xl text-[#009EE3] mb-4"></i>
-                        <h3 class="text-xl font-semibold mb-2">QR Dinámico</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">Genere códigos QR por el monto exacto de la venta al instante en la pantalla del TPV. El cliente escanea, paga, y el sistema aprueba el ticket automáticamente.</p>
-                    </div>
-                    <div class="glass-card p-6 md:p-8 rounded-2xl text-center border-b-4 border-[#009EE3]/40 hover:border-[#009EE3] hover:-translate-y-2 transition-all">
-                        <i class="fas fa-mobile-alt text-4xl text-[#009EE3] mb-4"></i>
-                        <h3 class="text-xl font-semibold mb-2">Terminales Point</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">Envíe el total a cobrar directamente a su lector Point Smart o Point Plus sin necesidad de teclear el importe manualmente, evitando errores de tipeo humano.</p>
-                    </div>
-                    <div class="glass-card p-6 md:p-8 rounded-2xl text-center border-b-4 border-[#009EE3]/40 hover:border-[#009EE3] hover:-translate-y-2 transition-all">
-                        <i class="fas fa-check-double text-4xl text-[#009EE3] mb-4"></i>
-                        <h3 class="text-xl font-semibold mb-2">Conciliación Exacta</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">Todos los pagos ingresan a su caja de Traxionar de forma transparente. Identifique rápidamente qué cobros se hicieron mediante esta plataforma y audite sus ingresos.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <!-- Section 10.5: Tienda Online Gratis con Dominio Propio -->
         <section id="tienda-online" class="snap-section" style="background-image: url('https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=1920&q=80'); background-position: center;">
@@ -2395,19 +2214,7 @@
 
         const sectionTitlesMap = {
             'inicio': 'Inicio',
-            'ventas': 'Punto de Venta Ágil',
-            'caja': 'Caja & Cierre Z',
-            'productos': 'Catálogo & Inventario',
-            'lotes': 'Lotes & Vencimientos',
-            'compras': 'Compras',
-            'proveedores': 'Proveedores',
-            'rrhh': 'RRHH & Asistencia',
-            'logistica': 'Logística & Flota',
-            'clientes': 'Clientes & Cta. Cte.',
-            'sucursales': 'Multi-Sucursales',
-            'presupuestos': 'Presupuestos PDF',
-            'carta-qr': 'Carta QR & Reservas',
-            'mercadopago': 'Mercado Pago Point/QR',
+            'traxionar-tpv': 'Traxionar TPV (13 Módulos)',
             'tienda-online': 'Tienda Online Gratis',
             'servicios-web': 'Streaming & Web',
             'ecosistema': 'Ecosistema de Sistemas',
@@ -2550,6 +2357,78 @@
         document.querySelectorAll('.reveal').forEach((element) => {
             observer.observe(element);
         });
+
+        // Alternar pilares operativos de Traxionar TPV (4 Pestañas)
+        function switchTpvView(view) {
+            const views = {
+                'ventas': document.getElementById('tpv-view-ventas'),
+                'stock': document.getElementById('tpv-view-stock'),
+                'clientes': document.getElementById('tpv-view-clientes'),
+                'sucursales': document.getElementById('tpv-view-sucursales')
+            };
+            const btns = {
+                'ventas': document.getElementById('tpv-tab-ventas-btn'),
+                'stock': document.getElementById('tpv-tab-stock-btn'),
+                'clientes': document.getElementById('tpv-tab-clientes-btn'),
+                'sucursales': document.getElementById('tpv-tab-sucursales-btn')
+            };
+
+            if (!views[view] || !btns[view]) return;
+
+            Object.keys(views).forEach(key => {
+                if (key === view) {
+                    views[key].classList.remove('hidden');
+                    btns[key].className = 'px-4 py-2 rounded-xl font-bold text-xs sm:text-sm transition-all duration-300 flex items-center gap-2 bg-gradient-to-r from-indigo-600 to-indigo-500 text-white shadow-lg shadow-indigo-500/30';
+                    const icon = btns[key].querySelector('i');
+                    if (icon) {
+                        icon.classList.remove('text-indigo-400');
+                    }
+                } else {
+                    views[key].classList.add('hidden');
+                    btns[key].className = 'px-4 py-2 rounded-xl font-semibold text-xs sm:text-sm transition-all duration-300 flex items-center gap-2 text-gray-300 hover:text-white hover:bg-white/10';
+                    const icon = btns[key].querySelector('i');
+                    if (icon) {
+                        icon.classList.add('text-indigo-400');
+                    }
+                }
+            });
+        }
+
+        // Mapeo y soporte para enlaces de ancla directos a Traxionar TPV
+        const tpvHashMap = {
+            'ventas': 'ventas',
+            'caja': 'ventas',
+            'presupuestos': 'ventas',
+            'mercadopago': 'ventas',
+            'productos': 'stock',
+            'lotes': 'stock',
+            'compras': 'stock',
+            'proveedores': 'stock',
+            'clientes': 'clientes',
+            'rrhh': 'clientes',
+            'sucursales': 'sucursales',
+            'logistica': 'sucursales',
+            'carta-qr': 'sucursales'
+        };
+
+        function handleTpvHash(hash) {
+            const clean = (hash || '').replace('#', '').toLowerCase();
+            if (tpvHashMap[clean]) {
+                switchTpvView(tpvHashMap[clean]);
+                const tpvSec = document.getElementById('traxionar-tpv');
+                if (tpvSec) {
+                    tpvSec.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        }
+
+        window.addEventListener('hashchange', () => {
+            handleTpvHash(window.location.hash);
+        });
+
+        if (window.location.hash) {
+            handleTpvHash(window.location.hash);
+        }
 
         // Alternar vistas de Lander (Barbería vs Minimarket Retail)
         function switchLanderView(view) {
