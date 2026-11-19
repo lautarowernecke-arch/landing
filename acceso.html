@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="es-AR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>Acceso a Sistemas | Ecosistema TRAXIONAR</title>
+    <meta name="description" content="Portal unificado de acceso a los sistemas del ecosistema TRAXIONAR: Traxionar TPV Multi-Sucursal, Lander POS, Partrax Estacionamientos, CaseQR, TARS CRM, Gym Traxionar y más.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#06070c">
+    <meta name="color-scheme" content="dark">
+
+    <!-- Favicon e Iconos -->
+    <link rel="icon" type="image/png" href="logotraxionar.png">
+    <link rel="shortcut icon" type="image/png" href="logotraxionar.png">
+    <link rel="apple-touch-icon" href="logotraxionar.png">
+
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#06070c',
+                            card: 'rgba(255, 255, 255, 0.03)',
+                            cardBorder: 'rgba(255, 255, 255, 0.08)',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #06070c;
+            color: #f3f4f6;
+            min-height: 100vh;
+        }
+
+        .ambient-glow {
+            position: fixed;
+            border-radius: 9999px;
+            filter: blur(120px);
+            pointer-events: none;
+            opacity: 0.25;
+            z-index: 0;
+        }
+
+        .glow-indigo {
+            width: 500px;
+            height: 500px;
+            background: #6366f1;
+            top: -100px;
+            left: -100px;
+        }
+
+        .glow-cyan {
+            width: 450px;
+            height: 450px;
+            background: #06b6d4;
+            bottom: 10%;
+            right: -100px;
+        }
+
+        .glow-purple {
+            width: 400px;
+            height: 400px;
+            background: #8b5cf6;
+            top: 40%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .glass-card {
+            background: rgba(18, 20, 29, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(99, 102, 241, 0.4);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7), 0 0 25px rgba(99, 102, 241, 0.15);
+        }
+
+        .system-logo-wrap {
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.01) 70%);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        /* Ocultar barra de scroll en navegadores */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+
+<body class="relative flex flex-col justify-between overflow-x-hidden selection:bg-indigo-500 selection:text-white">
+
+    <!-- Luces de Ambiente de Fondo -->
+    <div class="ambient-glow glow-indigo" aria-hidden="true"></div>
+    <div class="ambient-glow glow-cyan" aria-hidden="true"></div>
+    <div class="ambient-glow glow-purple" aria-hidden="true"></div>
+
+    <!-- Navegación Superior -->
+    <header class="relative z-10 w-full border-b border-white/10 bg-black/40 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 group transition-transform hover:scale-[1.02]">
+                <img src="logotraxionar.png" alt="Logo oficial TRAXIONAR" class="h-8 sm:h-9 w-auto object-contain drop-shadow">
+                <span class="text-xs uppercase tracking-widest text-gray-400 font-medium hidden sm:inline-block border-l border-white/10 pl-3">
+                    Acceso a Sistemas
+                </span>
+            </a>
+
+            <div class="flex items-center gap-3">
+                <a href="https://wa.me/5493436440700?text=Hola,%20necesito%20soporte%20para%20ingresar%20a%20mi%20sistema%20Traxionar" target="_blank" rel="noopener noreferrer" class="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 hover:bg-emerald-500/20 transition-colors">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>Soporte Técnico</span>
+                </a>
+                <a href="index.html" class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold bg-white/10 hover:bg-white/20 text-white border border-white/15 transition-all">
+                    <i class="fas fa-arrow-left text-[11px]"></i>
+                    <span>Volver a la web</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="relative z-10 flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 w-full">
+        
+        <!-- Header de Bienvenida -->
+        <div class="text-center max-w-3xl mx-auto mb-10">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/25 text-indigo-300 text-xs font-medium mb-3">
+                <i class="fas fa-shield-alt text-indigo-400"></i>
+                <span>Portal Unificado de Clientes & Operadores</span>
+            </div>
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-3">
+                Iniciar Sesión en su <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-cyan-400 to-emerald-400">Sistema</span>
+            </h1>
+            <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
+                Seleccione la plataforma que utiliza su negocio para ingresar al panel de control, punto de venta o terminal de trabajo.
+            </p>
+
+            <!-- Barra de Búsqueda Rápida de Sistemas -->
+            <div class="mt-6 max-w-md mx-auto relative">
+                <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-sm pointer-events-none"></i>
+                <input 
+                    type="text" 
+                    id="system-search" 
+                    placeholder="Buscar sistema por nombre o rubro (ej: afip, barbería, patentes)..." 
+                    class="w-full pl-11 pr-10 py-2.5 rounded-xl bg-white/[0.05] border border-white/10 text-white placeholder-gray-500 text-xs sm:text-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all"
+                    aria-label="Buscar sistema"
+                >
+                <button id="clear-search" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white text-xs p-1" title="Limpiar búsqueda">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div id="search-counter" class="text-xs text-gray-400 mt-2 font-medium">
+                Mostrando todos los sistemas disponibles
+            </div>
+        </div>
+
+        <!-- Mensaje de 'Sin resultados' -->
+        <div id="no-results" class="hidden text-center py-12">
+            <div class="w-14 h-14 mx-auto rounded-full bg-white/5 flex items-center justify-center text-gray-400 mb-3">
+                <i class="fas fa-search text-xl"></i>
+            </div>
+            <h3 class="text-lg font-semibold text-white mb-1">No se encontró ningún sistema</h3>
+            <p class="text-xs text-gray-400 mb-4">Probá buscando con otro término como "tpv", "barbería", "qr", "taller" o "gym".</p>
+            <button onclick="document.getElementById('system-search').value = ''; filterSystems();" class="text-xs text-indigo-400 hover:text-indigo-300 font-semibold underline">
+                Ver todos los sistemas
+            </button>
+        </div>
+
+        <!-- Grid de Sistemas Principales -->
+        <div id="systems-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- SISTEMA 1: TRAXIONAR TPV (SISTEMA ORIGINAL) -->
+            <div class="system-card glass-card rounded-2xl p-6 flex flex-col justify-between border-t-4 border-indigo-500 relative group"
+                 data-title="Traxionar TPV Multi-Sucursal Sistema Original"
+                 data-tags="traxionar tpv punto de venta gestion afip factura electronica stock mercadopago multi-sucursal cajas z tienda online comercio kiosco supermercado mayorista peps">
+                
+                <!-- Badge Destacado Sistema Original -->
+                <div class="absolute -top-3 right-5">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-gradient-to-r from-indigo-600 to-cyan-600 text-white shadow-lg shadow-indigo-500/30">
+                        <i class="fas fa-star text-[9px] text-yellow-300"></i> Sistema Original Traxionar
+                    </span>
+                </div>
+
+                <div>
+                    <!-- Logo & Encabezado -->
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="system-logo-wrap w-16 h-16 rounded-xl flex items-center justify-center p-2.5 shrink-0">
+                            <img src="logotraxionar.png" alt="Logo Traxionar TPV" class="max-h-full max-w-full object-contain drop-shadow">
+                        </div>
+                        <div>
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-indigo-400">TPV & Gestión Integral</span>
+                            <h2 class="text-xl font-bold text-white group-hover:text-indigo-300 transition-colors">Traxionar TPV</h2>
+                            <p class="text-xs text-gray-400">Comercios, Distribuidoras & Supermercados</p>
+                        </div>
+                    </div>
+
+                    <!-- Descripción -->
+                    <p class="text-xs text-gray-300 leading-relaxed mb-4">
+                        Punto de Venta ágil con Facturación Electrónica AFIP, control de inventario PEPS, lotes y vencimientos, cobros con Mercado Pago Point y QR dinámico, multi-sucursal y Tienda Online gratuita integrada.
+                    </p>
+
+                    <!-- Tags de características -->
+                    <div class="flex flex-wrap gap-1.5 mb-6">
+                        <span class="text-[10px] px-2 py-0.5 rounded-md bg-white/5 text-gray-300 border border-white/5">Factura AFIP</span>
+                        <span class="text-[10px] px-2 py-0.5 rounded-md bg-white/5 text-gray-300 border border-white/5">Stock & Lotes</span>
+                        <span class="text-[10px] px-2 py-0.5 rounded-md bg-white/5 text-gray-300 border border-white/5">Mercado Pago</span>
+                        <span class="text-[10px] px-2 py-0.5 rounded-md bg-white/5 text-gray-300 border border-white/5">Tienda Online</span>
+                    </div>
+                </div>
+
+                <!-- Botón de Acceso -->
+                <a href="https://traxionar.com.ar/tpvs/" class="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs font-bold text-white bg-indigo-600 hover:bg-indigo-500 shadow-lg shadow-indigo-600/30 group-hover:scale-[1.02] transition-all">
+                    <span>Ingresar a Traxionar TPV</span>
+                    <i class="fas fa-arrow-right text-[11px] group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+
+            <!-- SISTEMA 2: LANDER BARBERÍA & MINIMARKETS POS -->
+            <div class="system-card glass-card rounded-2xl p-6 flex flex-col justify-between border-t-4 border-amber-500 relative group"
+                 data-title="Lander POS Barbería Peluquería Minimarket"
+                 data-tags="lander barberia peluqueria turno turnero whatsapp comisiones barberos minimarket kiosco tienda online gratis pos">
+                
+                <div class="absolute -top-3 right-5">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-amber-500/20 border border-amber-500/40 text-amber-300">
+                        <i class="fas fa-cut text-[9px]"></i> Barbería & Minimarket
+                    </span>
+                </div>
+
+                <div>
+                    <!-- Logo & Encabezado -->
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="system-logo-wrap w-16 h-16 rounded-xl flex items-center justify-center p-2.5 shrink-0">
+                            <img src="lander.png" alt="Logo Lander POS" class="max-h-full max-w-full object-contain drop-shadow">
+                        </div>
+                        <div>
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-amber-400">POS & Turnos Online</span>
+                            <h2 class="text-xl font-bold text-white group-hover:text-amber-300 transition-colors">Lander POS</h2>
+                            <p class="text-xs text-gray-400">Barberías, Salones de Belleza & Kioscos</p>
+                        </div>
+                    </div>
+
+                    <!-- Descripción -->
+                    <p class="text-xs text-gray-300 leading-relaxed mb-4">
+                        Agenda de turnos online automatizada con avisos por WhatsApp, cálculo automático de comisiones por profesional, TPV rápido para ventas y Tienda Online gratuita con dominio propio.
+                    </p>
+
+                    <!-- Tags -->
+                    <div class="flex flex-wrap gap-1.5 mb-6">
+                        <span class="text-[10px] px-2 py-0.5 rounded-md bg-white/5 text-gray-300 border border-white/5">Turnos WhatsApp</span>
+                        <span class="text-[10px] px-2 py-0.5 rounded-md bg-white/5 text-gray-300 border border-white/5">Comisiones</span>
+                        <span class="text-[10px] px-2 py-0.5 rounded-md bg-white/5 text-gray-300 border border-white/5">Tienda Gratis</span>
+                        <span class="text-[10px] px-2 py-0.5 rounded-md bg-white/5 text-gray-300 border border-white/5">Caja Rápida</span>
+                    </div>
+                </div>
+
+                <!-- Botón de Acceso -->
+                <a href="https://lander.traxionar.com.ar" class="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs font-bold text-black bg-amber-400 hover:bg-amber-300 shadow-lg shadow-amber-400/20 group-hover:scale-[1.02] transition-all">
+                    <span>Ingresar a Lander POS</span>
+                    <i class="fas fa-arrow-right text-[11px] group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+
+            <!-- SISTEMA 3: PARTRAX PARKING -->
+            <div class="system-card glass-card rounded-2xl p-6 flex flex-col justify-between border-t-4 border-orange-500 relative group"
+                 data-title="Partrax Parking Estacionamiento Cocheras"
+                 data-tags="partrax estacionamiento cocheras patentes playa mapa tarifas autos motos abonados estadia cierre de caja">
+                
+                <div class="absolute -top-3 right-5">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-orange-500/20 border border-orange-500/40 text-orange-300">
+                        <i class="fas fa-car text-[9px]"></i> Parqueos SaaS
+                    </span>
+                </div>
+
+                <div>
+                    <!-- Logo & Encabezado -->
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="system-logo-wrap w-16 h-16 rounded-xl flex items-center justify-center p-2.5 shrink-0">
+                            <img src="partrax.png" alt="Logo Partrax" class="max-h-full max-w-full object-contain drop-shadow">
+                        </div>
+                        <div>
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-orange-400">Playas & Cocheras</span>
+                            <h2 class="text-xl font-bold text-white group-hover:text-orange-300 transition-colors">Partrax</h2>
+                            <p class="text-xs text-gray-400">Playas de Estacionamiento y Garajes</p>
+                        </div>
+                    </div>
+
+                    <!-- Descripción -->
+                    <p class="text-xs text-gray-300 leading-relaxed mb-4">
+                        Control de entradas y salidas por patente en tiempo real, asignación interactiva de cocheras en mapa de pisos/zonas, cálculo de tarifas por hora/estadía, abonados mensuales y arqueo por operador.
+                    </p>
+
+                    <!-- Tags -->
+                    <div class="flex flex-wrap gap-1.5 mb-6">
+                        <span class="text-[10px] px-2 py-0.5 rounded-md bg-white/5 text-gray-300 border border-white/5">Lectura Patente</span>
+                        <span class="text-[10px] px-2 py-0.5 rounded-md bg-white/5 text-gray-300 border border-white/5">Mapa en Vivo</span>
+                        <span class="text-[10px] px-2 py-0.5 rounded-md bg-white/5 text-gray-300 border border-white/5">Abonados</span>
+                        <span class="text-[10px] px-2 py-0.5 rounded-md bg-white/5 text-gray-300 border border-white/5">Cierre Caja</span>
+                    </div>
+                </div>
+
+                <!-- Botón de Acceso -->
+                <a href="https://partrax.traxionar.com.ar" class="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-500 hover:to-amber-500 shadow-lg shadow-orange-600/30 group-hover:scale-[1.02] transition-all">
+                    <span>Ingresar a Partrax</span>
+                    <i class="fas fa-arrow-right text-[11px] group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+
+            <!-- SISTEMA 4: CASEQR ACCESOS & ASISTENCIA -->
+            <div class="system-card glass-card rounded-2xl p-6 flex flex-col justify-between border-t-4 border-cyan-500 relative group"
+                 data-title="CaseQR Control de Acceso Asistencia Personal Guardia"
+                 data-tags="caseqr case qr asistencia accesos personal rrhh fichadas kiosco pwa camara bitacora seguridad visitas">
+                
+                <div class="absolute -top-3 right-5">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-cyan-500/20 border border-cyan-500/40 text-cyan-300">
+                        <i class="fas fa-qrcode text-[9px]"></i> Accesos & Seguridad
+                    </span>
+                </div>
+
+                <div>
+                    <!-- Logo & Encabezado -->
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="system-logo-wrap w-16 h-16 rounded-xl flex items-center justify-center p-2.5 shrink-0">
+                            <img src="case.png" alt="Logo CaseQR" class="max-h-full max-w-full object-contain drop-shadow">
+                        </div>
+                        <div>
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-cyan-400">RRHH & Vigilancia</span>
+                            <h2 class="text-xl font-bold text-white group-hover:text-cyan-300 transition-colors">CaseQR</h2>
+                            <p class="text-xs text-gray-400">Empresas, Fábricas, Oficinas y Seguridad</p>
+                        </div>
+                    </div>
+
+                    <!-- Descripción -->
+                    <p class="text-xs text-gray-300 leading-relaxed mb-4">
+                        Kiosco PWA para fichadas rápidas con cámara y código QR dinámico. Computa horas trabajadas, presentismo del empleado, bitácora digital de novedades de guardias y registro de visitantes.
+                    </p>
+
+                    <!-- Tags -->
+                    <div class="flex flex-wrap gap-1.5 mb-6">
+                        <span class="text-[10px] px-2 py-0.5 rounded-md bg-white/5 text-gray-300 border border-white/5">Fichada QR</span>
+                        <span class="text-[10px] px-2 py-0.5 rounded-md bg-white/5 text-gray-300 border border-white/5">Kiosco PWA</span>
+                        <span class="text-[10px] px-2 py-0.5 rounded-md bg-white/5 text-gray-300 border border-white/5">Bitácora Guardia</span>
+                        <span class="text-[10px] px-2 py-0.5 rounded-md bg-white/5 text-gray-300 border border-white/5">Visitas</span>
+                    </div>
+                </div>
+
+                <!-- Botón de Acceso -->
+                <a href="https://qr.traxionar.com.ar" class="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs font-bold text-black bg-cyan-400 hover:bg-cyan-300 shadow-lg shadow-cyan-400/20 group-hover:scale-[1.02] transition-all">
+                    <span>Ingresar a CaseQR</span>
+                    <i class="fas fa-arrow-right text-[11px] group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+
+            <!-- SISTEMA 5: TARS CRM CELULARES & SERVICIO TÉCNICO -->
+            <div class="system-card glass-card rounded-2xl p-6 flex flex-col justify-between border-t-4 border-violet-500 relative group"
+                 data-title="TARS CRM Servicio Tecnico Celulares Reparaciones"
+                 data-tags="tars crm celulares taller reparacion imei garantias repuestos orden de trabajo servicio tecnico">
+                
+                <div class="absolute -top-3 right-5">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-violet-500/20 border border-violet-500/40 text-violet-300">
+                        <i class="fas fa-mobile-alt text-[9px]"></i> Taller & Móviles
+                    </span>
+                </div>
+
+                <div>
+                    <!-- Logo & Encabezado -->
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="system-logo-wrap w-16 h-16 rounded-xl flex items-center justify-center p-2.5 shrink-0">
+                            <img src="tars.png" alt="Logo TARS CRM" class="max-h-full max-w-full object-contain drop-shadow">
+                        </div>
+                        <div>
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-violet-400">Servicio Técnico & CRM</span>
+                            <h2 class="text-xl font-bold text-white group-hover:text-violet-300 transition-colors">TARS CRM</h2>
+                            <p class="text-xs text-gray-400">Tiendas de Telefonía, Informática y Talleres</p>
+                        </div>
+                    </div>
+
+                    <!-- Descripción -->
+                    <p class="text-xs text-gray-300 leading-relaxed mb-4">
+                        Gestión completa de reparaciones y servicio técnico con trazabilidad estricta por IMEI. Emisión de órdenes de trabajo en PDF, control de stock de repuestos, garantías, señas y ventas de accesorios.
+                    </p>
+
+                    <!-- Tags -->
+                    <div class="flex flex-wrap gap-1.5 mb-6">
+                        <span class="text-[10px] px-2 py-0.5 rounded-md bg-white/5 text-gray-300 border border-white/5">Órdenes PDF</span>
+                        <span class="text-[10px] px-2 py-0.5 rounded-md bg-white/5 text-gray-300 border border-white/5">Stock IMEI</span>
+                        <span class="text-[10px] px-2 py-0.5 rounded-md bg-white/5 text-gray-300 border border-white/5">Garantías</span>
+                        <span class="text-[10px] px-2 py-0.5 rounded-md bg-white/5 text-gray-300 border border-white/5">Repuestos</span>
+                    </div>
+                </div>
+
+                <!-- Botón de Acceso -->
+                <a href="https://tars.traxionar.com.ar" class="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs font-bold text-white bg-violet-600 hover:bg-violet-500 shadow-lg shadow-violet-600/30 group-hover:scale-[1.02] transition-all">
+                    <span>Ingresar a TARS CRM</span>
+                    <i class="fas fa-arrow-right text-[11px] group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+
+            <!-- SISTEMA 6: GYM TRAXIONAR FITNESS -->
+            <div class="system-card glass-card rounded-2xl p-6 flex flex-col justify-between border-t-4 border-rose-500 relative group"
+                 data-title="Gym Traxionar Fitness Gimnasio Socios"
+                 data-tags="gym traxionar gimnasio crossfit pilates fitness socios cuotas membresias rutinas antropometria">
+                
+                <div class="absolute -top-3 right-5">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-rose-500/20 border border-rose-500/40 text-rose-300">
+                        <i class="fas fa-dumbbell text-[9px]"></i> Fitness SaaS
+                    </span>
+                </div>
+
+                <div>
+                    <!-- Logo & Encabezado -->
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="system-logo-wrap w-16 h-16 rounded-xl flex items-center justify-center p-2.5 shrink-0">
+                            <img src="traxionargym.png" alt="Logo Gym Traxionar" class="max-h-full max-w-full object-contain drop-shadow">
+                        </div>
+                        <div>
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-rose-400">Centros Deportivos</span>
+                            <h2 class="text-xl font-bold text-white group-hover:text-rose-300 transition-colors">Gym Traxionar</h2>
+                            <p class="text-xs text-gray-400">Gimnasios, CrossFit, Yoga & Estudios de Pilates</p>
+                        </div>
+                    </div>
+
+                    <!-- Descripción -->
+                    <p class="text-xs text-gray-300 leading-relaxed mb-4">
+                        Administración integral de centros fitness: padrón de socios, cobro y vencimiento de membresías, rutinas interactivas, fichas antropométricas y control de acceso.
+                    </p>
+
+                    <!-- Tags -->
+                    <div class="flex flex-wrap gap-1.5 mb-6">
+                        <span class="text-[10px] px-2 py-0.5 rounded-md bg-white/5 text-gray-300 border border-white/5">Control Socios</span>
+                        <span class="text-[10px] px-2 py-0.5 rounded-md bg-white/5 text-gray-300 border border-white/5">Vencimientos</span>
+                        <span class="text-[10px] px-2 py-0.5 rounded-md bg-white/5 text-gray-300 border border-white/5">Rutinas Digitales</span>
+                        <span class="text-[10px] px-2 py-0.5 rounded-md bg-white/5 text-gray-300 border border-white/5">Antropometría</span>
+                    </div>
+                </div>
+
+                <!-- Botón de Acceso -->
+                <a href="https://gym.traxionar.com.ar" class="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs font-bold text-white bg-rose-600 hover:bg-rose-500 shadow-lg shadow-rose-600/30 group-hover:scale-[1.02] transition-all">
+                    <span>Ingresar a Gym Traxionar</span>
+                    <i class="fas fa-arrow-right text-[11px] group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+
+            <!-- SISTEMA 7: ALLCRED / CRÉDITOS Y COBRANZAS -->
+            <div class="system-card glass-card rounded-2xl p-6 flex flex-col justify-between border-t-4 border-emerald-500 relative group"
+                 data-title="AllCred Creditos Prestamos Cobranzas"
+                 data-tags="allcred alcreed creditos prestamos cuotas cobranzas financiamiento clientes">
+                
+                <div class="absolute -top-3 right-5">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-emerald-500/20 border border-emerald-500/40 text-emerald-300">
+                        <i class="fas fa-hand-holding-usd text-[9px]"></i> Créditos
+                    </span>
+                </div>
+
+                <div>
+                    <!-- Logo & Encabezado -->
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="system-logo-wrap w-16 h-16 rounded-xl flex items-center justify-center p-2.5 shrink-0">
+                            <img src="alcreed.png" alt="Logo AllCred" class="max-h-full max-w-full object-contain drop-shadow">
+                        </div>
+                        <div>
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-400">Financiamiento & Cobranzas</span>
+                            <h2 class="text-xl font-bold text-white group-hover:text-emerald-300 transition-colors">AllCred</h2>
+                            <p class="text-xs text-gray-400">Gestión de Créditos Personales y Cuotas</p>
+                        </div>
+                    </div>
+
+                    <!-- Descripción -->
+                    <p class="text-xs text-gray-300 leading-relaxed mb-4">
+                        Plataforma para administración de préstamos personales, liquidación de cuotas, seguimiento de cobranzas, cálculo de intereses y reportes de morosidad.
+                    </p>
+
+                    <!-- Tags -->
+                    <div class="flex flex-wrap gap-1.5 mb-6">
+                        <span class="text-[10px] px-2 py-0.5 rounded-md bg-white/5 text-gray-300 border border-white/5">Planes de Cuotas</span>
+                        <span class="text-[10px] px-2 py-0.5 rounded-md bg-white/5 text-gray-300 border border-white/5">Cobranzas</span>
+                        <span class="text-[10px] px-2 py-0.5 rounded-md bg-white/5 text-gray-300 border border-white/5">Intereses</span>
+                    </div>
+                </div>
+
+                <!-- Botón de Acceso -->
+                <a href="https://traxionar.com.ar/allcred/" class="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs font-bold text-black bg-emerald-400 hover:bg-emerald-300 shadow-lg shadow-emerald-400/20 group-hover:scale-[1.02] transition-all">
+                    <span>Ingresar a AllCred</span>
+                    <i class="fas fa-arrow-right text-[11px] group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+
+            <!-- SISTEMA 8: LIGA DE FÚTBOL / TORNEOS -->
+            <div class="system-card glass-card rounded-2xl p-6 flex flex-col justify-between border-t-4 border-blue-500 relative group"
+                 data-title="Liga Victoriense de Futbol Torneos Campeonatos"
+                 data-tags="futbol torneos campeonatos liga victoriense fixture posiciones clubes planillas">
+                
+                <div class="absolute -top-3 right-5">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-blue-500/20 border border-blue-500/40 text-blue-300">
+                        <i class="fas fa-futbol text-[9px]"></i> Torneos Deportivos
+                    </span>
+                </div>
+
+                <div>
+                    <!-- Logo & Encabezado -->
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="system-logo-wrap w-16 h-16 rounded-xl flex items-center justify-center p-2.5 shrink-0">
+                            <img src="logofutbol.png" alt="Logo Liga de Fútbol" class="max-h-full max-w-full object-contain drop-shadow">
+                        </div>
+                        <div>
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-blue-400">Ligas & Asociaciones</span>
+                            <h2 class="text-xl font-bold text-white group-hover:text-blue-300 transition-colors">Liga de Fútbol</h2>
+                            <p class="text-xs text-gray-400">Torneos, Fixtures, Tablas y Arbitrajes</p>
+                        </div>
+                    </div>
+
+                    <!-- Descripción -->
+                    <p class="text-xs text-gray-300 leading-relaxed mb-4">
+                        Sistema integral para federaciones y ligas deportivas: fixtures automáticos, tabla de posiciones, amonestaciones, goleadores, registro de pases y actas de partido.
+                    </p>
+
+                    <!-- Tags -->
+                    <div class="flex flex-wrap gap-1.5 mb-6">
+                        <span class="text-[10px] px-2 py-0.5 rounded-md bg-white/5 text-gray-300 border border-white/5">Fixture & Tablas</span>
+                        <span class="text-[10px] px-2 py-0.5 rounded-md bg-white/5 text-gray-300 border border-white/5">Fichas Jugadores</span>
+                        <span class="text-[10px] px-2 py-0.5 rounded-md bg-white/5 text-gray-300 border border-white/5">Actas Arbitrales</span>
+                    </div>
+                </div>
+
+                <!-- Botón de Acceso -->
+                <a href="https://ligavictoriensedefutbol.com.ar" class="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs font-bold text-white bg-blue-600 hover:bg-blue-500 shadow-lg shadow-blue-600/30 group-hover:scale-[1.02] transition-all">
+                    <span>Ingresar a la Plataforma</span>
+                    <i class="fas fa-arrow-right text-[11px] group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Banner de Asistencia y Soporte Directo -->
+        <div class="mt-12 glass-card rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 border border-white/10">
+            <div class="flex items-center gap-4 text-center md:text-left">
+                <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 text-2xl">
+                    <i class="fab fa-whatsapp"></i>
+                </div>
+                <div>
+                    <h3 class="text-base sm:text-lg font-bold text-white mb-0.5">¿Necesitás ayuda para ingresar o no recordás tus credenciales?</h3>
+                    <p class="text-xs sm:text-sm text-gray-400">Nuestro equipo de soporte técnico responde de inmediato para restablecer accesos o brindarte asesoría.</p>
+                </div>
+            </div>
+            <a href="https://wa.me/5493436440700?text=Hola,%20necesito%20asistencia%20para%20iniciar%20sesi%C3%B3n%20en%20mi%20sistema%20Traxionar" target="_blank" rel="noopener noreferrer" class="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-xs sm:text-sm shadow-lg shadow-emerald-500/20 transition-all hover:scale-105 whitespace-nowrap">
+                <i class="fab fa-whatsapp text-base"></i>
+                <span>Chatear con Soporte</span>
+            </a>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative z-10 border-t border-white/10 bg-black/60 backdrop-blur-md py-6 text-center text-xs text-gray-400">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-2">
+                <img src="logotraxionar.png" alt="TRAXIONAR" class="h-6 w-auto object-contain">
+                <span class="text-gray-400">© 2026 WERNECKE. Todos los derechos reservados.</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="index.html" class="hover:text-white transition-colors">Inicio</a>
+                <a href="index.html#ecosistema" class="hover:text-white transition-colors">Ecosistema</a>
+                <a href="index.html#planes" class="hover:text-white transition-colors">Planes y Precios</a>
+                <a href="https://wa.me/5493436440700" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400 transition-colors">Contacto</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script de Búsqueda Interactiva -->
+    <script>
+        const searchInput = document.getElementById('system-search');
+        const clearBtn = document.getElementById('clear-search');
+        const cards = document.querySelectorAll('.system-card');
+        const noResults = document.getElementById('no-results');
+        const counter = document.getElementById('search-counter');
+        const totalSystems = cards.length;
+
+        function normalizeText(text) {
+            return text.toLowerCase()
+                .normalize('NFD')
+                .replace(/[\u0300-\u036f]/g, '')
+                .trim();
+        }
+
+        function filterSystems() {
+            const query = normalizeText(searchInput.value);
+            let visibleCount = 0;
+
+            if (query.length > 0) {
+                clearBtn.classList.remove('hidden');
+            } else {
+                clearBtn.classList.add('hidden');
+            }
+
+            cards.forEach(card => {
+                const title = normalizeText(card.getAttribute('data-title') || '');
+                const tags = normalizeText(card.getAttribute('data-tags') || '');
+                const text = normalizeText(card.innerText || '');
+
+                if (title.includes(query) || tags.includes(query) || text.includes(query)) {
+                    card.classList.remove('hidden');
+                    visibleCount++;
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+
+            if (visibleCount === 0) {
+                noResults.classList.remove('hidden');
+                counter.innerText = 'No se encontraron resultados';
+            } else {
+                noResults.classList.add('hidden');
+                if (query.length > 0) {
+                    counter.innerText = `Mostrando ${visibleCount} de ${totalSystems} sistemas`;
+                } else {
+                    counter.innerText = `Mostrando todos los sistemas disponibles (${totalSystems})`;
+                }
+            }
+        }
+
+        searchInput.addEventListener('input', filterSystems);
+        
+        clearBtn.addEventListener('click', () => {
+            searchInput.value = '';
+            filterSystems();
+            searchInput.focus();
+        });
+    </script>
+</body>
+</html>
